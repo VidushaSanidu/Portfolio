@@ -1,218 +1,11 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../../../contexts/ThemeContext';
-import LighthouseScoreCard from './LighthouseScoreCard';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { SKILLS_DATA, QUICK_STATS } from '../../../constants/skills';
 import SectionHeading from '../../ui/common/SectionHeading';
-
-const SkillBar = ({ skill, index, isVisible, theme }) => {
-  const [animatedLevel, setAnimatedLevel] = useState(0);
-
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setAnimatedLevel(skill.level);
-      }, index * 100);
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, skill.level, index]);
-
-  const getSkillLevel = (level) => {
-    if (level >= 90) return { text: "Expert", color: "text-green-400" };
-    if (level >= 80) return { text: "Advanced", color: "text-blue-400" };
-    if (level >= 70) return { text: "Intermediate", color: "text-yellow-400" };
-    return { text: "Learning", color: "text-purple-400" };
-  };
-
-  const skillLevel = getSkillLevel(skill.level);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{
-        delay: index * 0.1,
-        duration: 0.5,
-        ease: "easeOut"
-      }}
-      className="group"
-    >
-      {/* Skill Header */}
-      <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center gap-3">
-          <span className={`font-semibold ${theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-            }`}>
-            {skill.name}
-          </span>
-          <span className={`text-xs px-2 py-1 rounded-full ${skillLevel.color} bg-opacity-20`}>
-            {skillLevel.text}
-          </span>
-        </div>
-        <span className={`text-sm font-mono ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
-          }`}>
-          {animatedLevel}%
-        </span>
-      </div>
-
-      {/* Progress Bar */}
-      <div className={`relative h-2 rounded-full overflow-hidden ${theme.currentTheme === 'minimal' ? 'bg-gray-200' : 'bg-neutral-700'
-        }`}>
-        <motion.div
-          className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"
-          initial={{ width: "0%" }}
-          animate={{ width: `${animatedLevel}%` }}
-          transition={{
-            duration: 1.5,
-            delay: index * 0.1,
-            ease: "easeOut"
-          }}
-        />
-
-        {/* Glow effect */}
-        <motion.div
-          className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 blur-sm opacity-60"
-          initial={{ width: "0%" }}
-          animate={{ width: `${animatedLevel}%` }}
-          transition={{
-            duration: 1.5,
-            delay: index * 0.1,
-            ease: "easeOut"
-          }}
-        />
-      </div>
-
-      {/* Skill Details on Hover */}
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: 0,
-          height: 0,
-        }}
-        whileHover={{
-          opacity: 1,
-          height: "auto",
-          transition: { duration: 0.2 }
-        }}
-        className={`mt-2 text-xs ${theme.currentTheme === 'minimal' ? 'text-gray-500' : 'text-neutral-500'
-          } overflow-hidden`}
-      >
-        <div className="flex gap-4">
-          <span>📅 {skill.years} years</span>
-          <span>🚀 {skill.projects} projects</span>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-const CategoryCard = ({ category, data, index, activeCategory, setActiveCategory, theme }) => {
-  const isActive = activeCategory === category;
-
-  return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: index * 0.1,
-        duration: 0.6,
-        ease: "easeOut"
-      }}
-      className={`
-        relative rounded-xl p-6 cursor-pointer transition-all duration-300
-        ${theme.currentTheme === 'minimal'
-          ? 'bg-white border border-gray-200 hover:border-gray-300'
-          : 'bg-slate-900/90 border border-slate-800 hover:border-slate-700'
-        }
-        ${isActive ? 'ring-1 ring-cyan-500/60 border-slate-600' : ''}
-      `}
-      onClick={() => setActiveCategory(isActive ? null : category)}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-    >
-      {/* Category Header */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">
-            <data.icon className="w-6 h-6" />
-          </span>
-          <h3 className={`text-lg font-bold ${theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-            }`}>
-            {category}
-          </h3>
-        </div>
-
-        <motion.div
-          animate={{ rotate: isActive ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className={`text-sm ${theme.currentTheme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
-            }`}
-        >
-          ▼
-        </motion.div>
-      </div>
-
-      {/* Skills Overview */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {data.skills.slice(0, 3).map((skill) => (
-          <span
-            key={skill.name}
-            className={`text-xs px-2 py-1 rounded-full ${theme.currentTheme === 'minimal'
-              ? 'bg-gray-100 text-gray-600'
-              : 'bg-neutral-700 text-neutral-300'
-              }`}
-          >
-            {skill.name}
-          </span>
-        ))}
-        {data.skills.length > 3 && (
-          <span className={`text-xs px-2 py-1 rounded-full ${theme.currentTheme === 'minimal'
-            ? 'bg-gray-100 text-gray-500'
-            : 'bg-neutral-700 text-neutral-400'
-            }`}>
-            +{data.skills.length - 3} more
-          </span>
-        )}
-      </div>
-
-      {/* Expanded Skills */}
-      <AnimatePresence>
-        {isActive && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="space-y-4"
-          >
-            <div className={`w-full h-px ${theme.currentTheme === 'minimal' ? 'bg-gray-200' : 'bg-neutral-700'
-              }`} />
-
-            {data.skills.map((skill, skillIndex) => (
-              <SkillBar
-                key={skill.name}
-                skill={skill}
-                index={skillIndex}
-                isVisible={isActive}
-                theme={theme}
-              />
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Background Glow */}
-      <div className={`
-        absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10
-        bg-gradient-to-r ${data.color} blur-xl
-      `} style={{ filter: 'blur(20px)' }} />
-    </motion.div>
-  );
-};
+import { Award, CheckCircle2 } from 'lucide-react';
 
 export default function SkillsVisualization() {
   const [activeCategory, setActiveCategory] = useState(null);
-  const theme = useTheme();
 
   return (
     <section className="max-w-6xl mx-auto py-16 px-4 lg:px-8">
@@ -222,74 +15,103 @@ export default function SkillsVisualization() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-center mb-12"
+        className="text-center mb-14"
       >
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase mb-3 bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs">
+          <Award className="w-3.5 h-3.5 text-blue-900" />
+          <span>Research Competencies & Tooling</span>
+        </div>
+
         <SectionHeading level="section">
-          Technical & Research Competencies
+          Technical & Scientific Competencies
         </SectionHeading>
-        <p className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
-          }`}>
-          Taxonomy of research frameworks, machine learning libraries, distributed orchestration, and production engineering systems. Click on any domain to inspect proficiencies.
+
+        <p className="text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans text-slate-600">
+          Taxonomy of theoretical research foundations, machine learning libraries, edge distributed orchestration, and high-performance systems engineering.
         </p>
       </motion.div>
 
-      {/* Skills Grid */}
+      {/* Competency Matrix Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Object.entries(SKILLS_DATA).map(([category, data], index) => (
-          <CategoryCard
-            key={category}
-            category={category}
-            data={data}
-            index={index}
-            activeCategory={activeCategory}
-            setActiveCategory={setActiveCategory}
-            theme={theme}
-          />
-        ))}
+        {Object.entries(SKILLS_DATA).map(([category, data], index) => {
+          const Icon = data.icon;
+          const isSelected = activeCategory === category;
+
+          return (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              onClick={() => setActiveCategory(isSelected ? null : category)}
+              className={`rounded-2xl p-6 sm:p-7 border transition-all duration-200 bg-white shadow-sm hover:shadow-md cursor-pointer ${
+                isSelected ? 'border-blue-900 ring-1 ring-blue-900/30' : 'border-slate-200 hover:border-slate-300'
+              }`}
+            >
+              {/* Category Header */}
+              <div className="flex items-center gap-3.5 mb-5 pb-4 border-b border-slate-100">
+                <div className="p-2.5 rounded-lg bg-blue-50 border border-blue-200 text-blue-900 flex-shrink-0">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg font-bold text-slate-900 leading-snug">
+                    {category}
+                  </h3>
+                  <span className="text-[11px] font-mono text-slate-500">
+                    {data.skills.length} Core Competencies
+                  </span>
+                </div>
+              </div>
+
+              {/* Skills List */}
+              <div className="space-y-2.5">
+                {data.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 transition-colors hover:bg-slate-100/70"
+                  >
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-900 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm font-medium text-slate-800">
+                        {skill.name}
+                      </span>
+                    </div>
+
+                    <span className="text-[11px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                      {skill.years}y exp
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Performance Metrics */}
+      {/* Quick Overview Stats */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.6 }}
-        className="mt-16 mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4"
       >
-        <h3 className={`text-2xl font-bold text-center mb-8 ${theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-          }`}>
-          Statistics
-        </h3>
-      </motion.div>
-
-      {/* Quick Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-        className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4"
-      >
-        {QUICK_STATS.map((stat, index) => (
-          <motion.div
+        {QUICK_STATS.map((stat) => (
+          <div
             key={stat.label}
-            whileHover={{ scale: 1.05, y: -5 }}
-            className={`
-              text-center p-4 rounded-xl transition-all duration-300
-              ${theme.currentTheme === 'minimal'
-                ? 'bg-white border border-gray-200'
-                : 'bg-neutral-800/30 border border-neutral-700/30'
-              }
-            `}
+            className="text-center p-5 rounded-2xl bg-white border border-slate-200 shadow-xs"
           >
-            <div className="text-2xl mb-4 flex items-center justify-center"><stat.icon className="w-6 h-6 text-purple-400" /></div>
-            <div className={`text-2xl font-bold ${theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-              }`}>
+            <div className="mb-2 flex items-center justify-center">
+              <stat.icon className="w-5 h-5 text-blue-900" />
+            </div>
+            <div className="text-2xl font-bold font-serif text-slate-900">
               {stat.value}
             </div>
-            <div className={`text-sm ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
-              }`}>
+            <div className="text-xs font-mono text-slate-500 mt-1">
               {stat.label}
             </div>
-          </motion.div>
+          </div>
         ))}
       </motion.div>
     </section>

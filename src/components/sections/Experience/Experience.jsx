@@ -37,11 +37,7 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle, theme }) => {
     <motion.div
       variants={cardVariants}
       whileHover={{ y: -4, scale: 1.005 }}
-      className={`relative rounded-2xl p-6 md:p-8 border transition-all duration-300 cursor-pointer group ${
-        theme === 'minimal'
-          ? 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-xl shadow-lg'
-          : 'bg-slate-900/90 border-slate-800 hover:border-slate-700 shadow-xl shadow-black/20'
-      }`}
+      className="relative rounded-2xl p-6 md:p-8 border border-slate-200 bg-white hover:border-slate-300 hover:shadow-md transition-all duration-300 cursor-pointer shadow-sm group"
       onClick={onToggle}
     >
       {isCurrentRole && (

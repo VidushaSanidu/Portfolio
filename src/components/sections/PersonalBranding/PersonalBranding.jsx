@@ -82,48 +82,29 @@ const BRAND_ELEMENTS = {
 const BrandCard = ({ data, theme }) => (
   <motion.div
     layout
-    className={`
-      relative p-6 rounded-xl transition-all duration-300
-      ${theme.currentTheme === 'minimal' 
-        ? 'bg-white border border-gray-200 hover:border-gray-300' 
-        : 'bg-neutral-800/40 border border-neutral-700/50 hover:border-neutral-600'
-      }
-    `}
-    whileHover={{ scale: 1.02, y: -4 }}
+    className="relative p-6 sm:p-7 rounded-2xl transition-all duration-300 bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300"
+    whileHover={{ y: -3 }}
   >
-    <div className="flex items-center gap-3 mb-4">
-      <span className="text-2xl">{data.icon}</span>
-      <h3 className={`font-bold text-lg ${
-        theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-      }`}>
+    <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-100">
+      <div className="p-2 rounded-lg bg-blue-50 text-blue-900 border border-blue-200">
+        {data.icon}
+      </div>
+      <h3 className="font-serif font-bold text-lg text-slate-900">
         {data.title}
       </h3>
     </div>
 
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      transition={{ duration: 0.3 }}
-      className="space-y-3"
-    >
+    <div className="space-y-2.5">
       {data.content.map((item, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: index * 0.1 }}
-          className={`flex items-start gap-3 text-sm ${
-            theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-300'
-          }`}
+          className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700"
         >
-          <span className="text-purple-400 mt-1">▶</span>
-          <span>{item}</span>
-        </motion.div>
+          <span className="text-blue-900 font-mono mt-0.5">▪</span>
+          <span className="leading-relaxed">{item}</span>
+        </div>
       ))}
-    </motion.div>
-
-    {/* Background gradient */}
-    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    </div>
   </motion.div>
 );
 
@@ -137,35 +118,17 @@ const AchievementCard = ({ achievement, index, theme }) => (
       ease: "easeOut"
     }}
     whileHover={{ scale: 1.05, y: -5 }}
-    className={`
-      relative p-6 rounded-xl text-center overflow-hidden group
-      ${theme.currentTheme === 'minimal' 
-        ? 'bg-white border border-gray-200' 
-        : 'bg-neutral-800/30 border border-neutral-700/30'
-      }
-    `}
+    className="relative p-6 rounded-2xl text-center bg-white border border-slate-200 shadow-xs"
   >
-    {/* Background glow */}
-    <div className={`
-      absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300
-      bg-gradient-to-r ${achievement.color}
-    `} style={{ filter: 'blur(20px)', transform: 'scale(1.5)' }} />
-    
     <div className="relative z-10">
       <div className="text-3xl mb-3">{achievement.icon}</div>
-      <div className={`text-2xl font-bold mb-2 ${
-        theme.currentTheme === 'minimal' ? 'text-gray-800' : 'text-white'
-      }`}>
+      <div className="text-2xl font-bold mb-2 text-slate-900">
         {achievement.metric}
       </div>
-      <div className={`font-semibold mb-1 ${
-        theme.currentTheme === 'minimal' ? 'text-gray-700' : 'text-neutral-200'
-      }`}>
+      <div className="font-semibold mb-1 text-slate-800">
         {achievement.title}
       </div>
-      <div className={`text-sm ${
-        theme.currentTheme === 'minimal' ? 'text-gray-500' : 'text-neutral-400'
-      }`}>
+      <div className="text-xs mt-1 text-slate-500">
         {achievement.description}
       </div>
     </div>
@@ -174,12 +137,17 @@ const AchievementCard = ({ achievement, index, theme }) => (
 
 const CodeSnippet = ({ theme }) => {
   const [typedText, setTypedText] = useState('');
-  const codeText = `const developer = {
+  const codeText = `// Academic Research Trajectory & Focus
+const scholar = {
   name: "Vidusha Sanidu",
-  role: "Full Stack Developer",
-  passion: "Creating impactful digital experiences",
-  superpower: "Make complex concepts simple",
-  weekness: "Always hungry!"
+  institution: "University of Peradeniya (UOP)",
+  focus: "Federated Learning & Differential Privacy",
+  specializations: [
+    "Non-IID Client Drift Mitigation",
+    "Secure Aggregation & Provable DP",
+    "Decentralized Clinical Decision Support"
+  ],
+  objective: "Advancing privacy-preserving distributed intelligence"
 };`;
 
   useEffect(() => {
@@ -191,42 +159,33 @@ const CodeSnippet = ({ theme }) => {
       } else {
         clearInterval(timer);
       }
-    }, 50);
+    }, 25);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.5, duration: 0.6 }}
-      className={`
-        p-6 rounded-xl font-mono text-sm relative overflow-hidden
-        ${theme.currentTheme === 'minimal' 
-          ? 'bg-gray-50 border border-gray-200' 
-          : 'bg-neutral-900/50 border border-neutral-700/50'
-        }
-      `}
+      transition={{ delay: 0.4, duration: 0.5 }}
+      className="p-6 rounded-2xl font-mono text-xs sm:text-sm relative overflow-hidden bg-slate-900 text-slate-200 border border-slate-800 shadow-md"
     >
-      <div className={`whitespace-pre-wrap ${
-        theme.currentTheme === 'minimal' ? 'text-gray-700' : 'text-green-400'
-      }`}>
+      <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-[11px] text-slate-400">
+        <span>researcher_profile.ts</span>
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+        </div>
+      </div>
+      <div className="whitespace-pre-wrap leading-relaxed text-slate-200">
         {typedText}
         <motion.span
           animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 1, repeat: Infinity }}
-          className="inline-block w-2 h-4 bg-current ml-1"
+          transition={{ duration: 0.9, repeat: Infinity }}
+          className="inline-block w-1.5 h-4 bg-blue-400 ml-1 align-middle"
         />
-      </div>
-
-      {/* Code highlighting effects */}
-      <div className="absolute top-4 right-4">
-        <div className="flex gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-400" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400" />
-          <div className="w-3 h-3 rounded-full bg-green-400" />
-        </div>
       </div>
     </motion.div>
   );

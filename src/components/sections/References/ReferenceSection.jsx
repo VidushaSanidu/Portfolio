@@ -81,57 +81,18 @@ export default function ReferenceSection() {
         ))}
       </motion.div>
 
-      {/* Footer stats */}
+      {/* Academic Referee Dossier Notice */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        className="mt-16 text-center"
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="mt-14 max-w-2xl mx-auto p-5 rounded-2xl bg-white border border-slate-200 shadow-xs text-center"
       >
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
-          <div className={`flex flex-col items-center ${
-            currentTheme === 'minimal' ? 'text-gray-700' : 'text-neutral-300'
-          }`}>
-            <span className={`text-2xl font-bold ${
-              currentTheme === 'minimal' ? 'text-gray-900' : 'text-white'
-            }`}>
-              100%
-            </span>
-            <span className="text-sm uppercase tracking-wide">Trust</span>
-          </div>
-          
-          <div className={`w-px h-12 hidden sm:block ${
-            currentTheme === 'minimal' ? 'bg-gray-300' : 'bg-neutral-600'
-          }`} />
-          
-          <div className={`flex flex-col items-center ${
-            currentTheme === 'minimal' ? 'text-gray-700' : 'text-neutral-300'
-          }`}>
-            <span className={`text-2xl font-bold ${
-              currentTheme === 'minimal' ? 'text-gray-900' : 'text-white'
-            }`}>
-              100%
-            </span>
-            <span className="text-sm uppercase tracking-wide">Positive</span>
-          </div>
-          
-          <div className={`w-px h-12 hidden sm:block ${
-            currentTheme === 'minimal' ? 'bg-gray-300' : 'bg-neutral-600'
-          }`} />
-          
-          <div className={`flex flex-col items-center ${
-            currentTheme === 'minimal' ? 'text-gray-700' : 'text-neutral-300'
-          }`}>
-            <span className={`text-2xl font-bold ${
-              currentTheme === 'minimal' ? 'text-gray-900' : 'text-white'
-            }`}>
-              100%
-            </span>
-            <span className="text-sm uppercase tracking-wide">Satisfaction</span>
-          </div>
-           
-        </div>
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+          <strong className="text-slate-900 font-semibold">Institutional Verification: </strong>
+          Detailed academic recommendation letters and references from faculty members at the University of Peradeniya and technical supervisors are available upon request for graduate admissions and grant evaluation.
+        </p>
       </motion.div>
     </section>
   );
