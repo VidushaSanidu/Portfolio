@@ -51,13 +51,6 @@ export default function Hero() {
                 >
                     {/* Main Scholarly Content - Left Side (7 cols) */}
                     <div className="lg:col-span-7 space-y-6">
-                        {/* Institutional Affiliation Eyebrow */}
-                        <motion.div variants={itemVariants}>
-                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wide bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs">
-                                <GraduationCap className="w-4 h-4 text-blue-900 flex-shrink-0" />
-                                <span>University of Peradeniya • CS Honors Scholar</span>
-                            </div>
-                        </motion.div>
 
                         {/* Scholar Name & Academic Designation */}
                         <motion.div variants={itemVariants} className="space-y-2">
@@ -65,12 +58,13 @@ export default function Hero() {
                                 {HERO_CONTENT.name}
                             </h1>
 
-                            <div className="flex flex-wrap items-center gap-2 pt-1">
-                                <span className="font-serif italic text-xl sm:text-2xl text-slate-700">
-                                    Computer Science Researcher
-                                </span>
-                                <span className="text-slate-400 hidden sm:inline">•</span>
-                                <div className="text-xs sm:text-sm font-mono text-slate-800 flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">
+                            <div className="space-y-2.5 pt-1">
+                                <div>
+                                    <span className="font-serif italic text-xl sm:text-2xl text-slate-700">
+                                        Computer Science Researcher
+                                    </span>
+                                </div>
+                                <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-slate-800 bg-slate-100 px-3 py-1.5 rounded-md border border-slate-200 w-fit">
                                     <span>{typedRole}</span>
                                     <span className="inline-block w-1.5 h-3.5 bg-blue-900 animate-pulse" />
                                 </div>
@@ -209,9 +203,9 @@ export default function Hero() {
 
                             {/* Portrait Frame - Understated & Scholarly */}
                             <div className="relative mx-auto mb-5 w-56 h-56 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-xs">
-                                <img 
-                                    src={profileImage} 
-                                    alt="Vidusha Sanidu" 
+                                <img
+                                    src={profileImage}
+                                    alt="Vidusha Sanidu"
                                     className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-300"
                                     onError={(e) => {
                                         e.target.style.display = 'none';

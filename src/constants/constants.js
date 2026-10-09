@@ -5,7 +5,7 @@ export const HERO_CONTENT = {
   status: "Open to Research Collaborations & Graduate Studies",
   roles: [
     "AI & Federated Learning Researcher",
-    "Computer Science Scholar @ UOP",
+    "Computer Science Graduate @ UOP",
     "Privacy-Preserving ML Engineer",
     "Distributed Intelligence Specialist",
     "Medical AI & Deep Learning Researcher",

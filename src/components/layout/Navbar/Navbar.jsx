@@ -25,7 +25,7 @@ export default function Navbar() {
         const handleClickOutside = (event) => {
             const isOutsideMenu = menuRef.current && !menuRef.current.contains(event.target);
             const isOutsideButton = buttonRef.current && !buttonRef.current.contains(event.target);
-            
+
             if (isOpen && isOutsideMenu && isOutsideButton) {
                 setIsOpen(false);
             }
@@ -57,7 +57,7 @@ export default function Navbar() {
     const toggleMenu = () => setIsOpen(prev => !prev);
 
     return (
-        <motion.nav 
+        <motion.nav
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -76,7 +76,7 @@ export default function Navbar() {
                                     Vidusha Sanidu
                                 </span>
                                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 -mt-1 hidden sm:block">
-                                    CS Researcher • UOP
+                                    CS Researcher • AI Engineer
                                 </span>
                             </div>
                         </a>
@@ -91,11 +91,10 @@ export default function Navbar() {
                                     <motion.a
                                         key={item.label}
                                         href={item.href}
-                                        className={`relative px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
-                                            isActive
+                                        className={`relative px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${isActive
                                                 ? 'text-slate-900 bg-slate-100 font-semibold border border-slate-200 shadow-xs'
                                                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
-                                        }`}
+                                            }`}
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                         aria-current={isActive ? 'page' : undefined}
@@ -118,21 +117,21 @@ export default function Navbar() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            <motion.svg 
-                                className="w-5 h-5" 
-                                fill="none" 
-                                stroke="currentColor" 
+                            <motion.svg
+                                className="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
                                 viewBox="0 0 24 24"
                                 animate={{ rotate: isOpen ? 45 : 0 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <motion.path 
-                                    strokeLinecap="round" 
-                                    strokeLinejoin="round" 
-                                    strokeWidth={2} 
+                                <motion.path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
                                     animate={{
-                                        d: isOpen 
-                                            ? "M6 6l12 12M6 18L18 6" 
+                                        d: isOpen
+                                            ? "M6 6l12 12M6 18L18 6"
                                             : "M4 6h16M4 12h16M4 18h16"
                                     }}
                                     transition={{ duration: 0.3 }}
@@ -169,11 +168,10 @@ export default function Navbar() {
                                         initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.04 }}
-                                        className={`flex items-center px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium ${
-                                            isActive
+                                        className={`flex items-center px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium ${isActive
                                                 ? 'text-slate-900 bg-slate-100 font-semibold'
                                                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                                        }`}
+                                            }`}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         <span className="mr-2 text-xs text-slate-400">
