@@ -15,10 +15,7 @@ const Timeline = lazy(() => import("./components/sections/Timeline"));
 const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
-const ReferenceSection = lazy(() => import("./components/sections/References"));
 const PersonalBranding = lazy(() => import("./components/sections/PersonalBranding"));
-const GitHubActivity = lazy(() => import("./components/sections/GitHubActivity"));
-const Chatbot = lazy(() => import("./components/sections/Chatbot"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 
 function AppContent() {
@@ -92,12 +89,6 @@ function AppContent() {
           <ErrorBoundary sectionName="projects section">
             <section id="projects">
               <Projects />
-            </section>
-          </ErrorBoundary>
-
-          <ErrorBoundary sectionName="references section">
-            <section id="references">
-              <ReferenceSection />
             </section>
           </ErrorBoundary>
 

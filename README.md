@@ -1,6 +1,5 @@
 # Vidusha Sanidu - Portfolio 🚀
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=flat-square&logo=vercel)](https://vidushasanidu.dev)
 [![Stars](https://img.shields.io/github/stars/VidushaSanidu/portfolio-main?style=social)](https://github.com/VidushaSanidu/portfolio-main/stargazers)
 [![Portfolio Version](https://img.shields.io/badge/Version-1.0.0-success?style=flat-square)](https://github.com/VidushaSanidu/portfolio-main)
 

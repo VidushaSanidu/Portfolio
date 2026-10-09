@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../../contexts/ThemeContext';
 import SectionHeading from '../../ui/common/SectionHeading';
-import { Brain, Cpu, Goal, GraduationCap, Quote, Route, ShieldCheck } from 'lucide-react';
+import { Goal, GraduationCap, Quote, ShieldCheck } from 'lucide-react';
 
 const BRAND_ELEMENTS = {
   philosophy: {
@@ -47,39 +46,7 @@ const BRAND_ELEMENTS = {
   }
 };
 
-
-// const ACHIEVEMENTS = [
-//   {
-//     title: "Performance Leader",
-//     description: "Lighthouse 100/89 scores consistently",
-//     icon: "🚀",
-//     metric: "100%",
-//     color: "from-green-400 to-emerald-500"
-//   },
-//   {
-//     title: "AI Innovation",
-//     description: "LangChain & RAG implementations",
-//     icon: "🤖",
-//     metric: "5+",
-//     color: "from-purple-400 to-pink-500"
-//   },
-//   {
-//     title: "Full Stack",
-//     description: "End-to-end project delivery",
-//     icon: "🛠️",
-//     metric: "50+",
-//     color: "from-blue-400 to-cyan-500"
-//   },
-//   {
-//     title: "Open Source",
-//     description: "Community contributions",
-//     icon: "🌟",
-//     metric: "MIT",
-//     color: "from-orange-400 to-red-500"
-//   }
-// ];
-
-const BrandCard = ({ data, theme }) => (
+const BrandCard = ({ data }) => (
   <motion.div
     layout
     className="relative p-6 sm:p-7 rounded-2xl transition-all duration-300 bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300"
@@ -108,89 +75,6 @@ const BrandCard = ({ data, theme }) => (
   </motion.div>
 );
 
-const AchievementCard = ({ achievement, index, theme }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50, scale: 0.9 }}
-    animate={{ opacity: 1, y: 0, scale: 1 }}
-    transition={{ 
-      delay: index * 0.1,
-      duration: 0.6,
-      ease: "easeOut"
-    }}
-    whileHover={{ scale: 1.05, y: -5 }}
-    className="relative p-6 rounded-2xl text-center bg-white border border-slate-200 shadow-xs"
-  >
-    <div className="relative z-10">
-      <div className="text-3xl mb-3">{achievement.icon}</div>
-      <div className="text-2xl font-bold mb-2 text-slate-900">
-        {achievement.metric}
-      </div>
-      <div className="font-semibold mb-1 text-slate-800">
-        {achievement.title}
-      </div>
-      <div className="text-xs mt-1 text-slate-500">
-        {achievement.description}
-      </div>
-    </div>
-  </motion.div>
-);
-
-const CodeSnippet = ({ theme }) => {
-  const [typedText, setTypedText] = useState('');
-  const codeText = `// Academic Research Trajectory & Focus
-const scholar = {
-  name: "Vidusha Sanidu",
-  institution: "University of Peradeniya (UOP)",
-  focus: "Federated Learning & Differential Privacy",
-  specializations: [
-    "Non-IID Client Drift Mitigation",
-    "Secure Aggregation & Provable DP",
-    "Decentralized Clinical Decision Support"
-  ],
-  objective: "Advancing privacy-preserving distributed intelligence"
-};`;
-
-  useEffect(() => {
-    let index = 0;
-    const timer = setInterval(() => {
-      if (index < codeText.length) {
-        setTypedText(codeText.slice(0, index + 1));
-        index++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 25);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.4, duration: 0.5 }}
-      className="p-6 rounded-2xl font-mono text-xs sm:text-sm relative overflow-hidden bg-slate-900 text-slate-200 border border-slate-800 shadow-md"
-    >
-      <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800 text-[11px] text-slate-400">
-        <span>researcher_profile.ts</span>
-        <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-          <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-        </div>
-      </div>
-      <div className="whitespace-pre-wrap leading-relaxed text-slate-200">
-        {typedText}
-        <motion.span
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 0.9, repeat: Infinity }}
-          className="inline-block w-1.5 h-4 bg-blue-400 ml-1 align-middle"
-        />
-      </div>
-    </motion.div>
-  );
-};
-
 export default function PersonalBranding() {
   const theme = useTheme();
 
@@ -199,7 +83,8 @@ export default function PersonalBranding() {
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
@@ -214,31 +99,13 @@ export default function PersonalBranding() {
       </motion.div>
 
       {/* Brand Elements Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {Object.entries(BRAND_ELEMENTS).map(([key, data]) => (
           <BrandCard
             key={key}
             data={data}
-            theme={theme}
           />
         ))}
-      </div>
-
-      {/* Achievements Grid
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        {ACHIEVEMENTS.map((achievement, index) => (
-          <AchievementCard
-            key={achievement.title}
-            achievement={achievement}
-            index={index}
-            theme={theme}
-          />
-        ))}
-      </div> */}
-
-      {/* Code Snippet */}
-      <div className="max-w-2xl mx-auto">
-        <CodeSnippet theme={theme} />
       </div>
     </section>
   );
