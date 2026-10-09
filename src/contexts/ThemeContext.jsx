@@ -3,24 +3,38 @@ import { createContext, useContext, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const THEMES = {
+  minimal: {
+    name: 'Academic Light',
+    icon: '📖',
+    primary: 'from-slate-900 to-blue-950',
+    secondary: 'from-blue-900 to-slate-800',
+    accent: 'blue-800',
+    background: 'slate-50',
+    surface: 'white',
+    text: 'slate-800',
+    textBright: 'slate-950',
+    border: 'slate-200',
+    glow: 'transparent',
+    shadow: 'rgba(15, 23, 42, 0.06)',
+  },
   neon: {
-    name: 'Neon',
-    icon: '⚡',
-    primary: 'from-cyan-400 to-pink-500',
-    secondary: 'from-green-400 to-blue-500',
-    accent: 'cyan-400',
-    background: 'black',
-    surface: 'neutral-900',
-    text: 'cyan-300',
-    textBright: 'cyan-100',
-    border: 'cyan-500/50',
-    glow: 'cyan-400/30',
-    shadow: 'rgba(0, 255, 255, 0.5)',
+    name: 'Academic Light',
+    icon: '📖',
+    primary: 'from-slate-900 to-blue-950',
+    secondary: 'from-blue-900 to-slate-800',
+    accent: 'blue-800',
+    background: 'slate-50',
+    surface: 'white',
+    text: 'slate-800',
+    textBright: 'slate-950',
+    border: 'slate-200',
+    glow: 'transparent',
+    shadow: 'rgba(15, 23, 42, 0.06)',
   },
 };
 
 export function ThemeProvider({ children }) {
-  const currentTheme = 'neon'; // Always use neon theme
+  const currentTheme = 'minimal'; // Always use academic light theme
 
   // Apply theme to document root
   useEffect(() => {

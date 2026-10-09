@@ -5,12 +5,11 @@ import { getThemeFocusRing } from '../../../utils/accessibility';
 
 const SECTION_LINKS = [
     { label: 'Home', href: '#hero' },
+    { label: 'Research', href: '#research' },
+    { label: 'Timeline', href: '#timeline' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'References', href: '#references' },
-    { label: 'Brand', href: '#brand' },
-    { label: 'GitHub', href: '#github' },
     { label: 'Contact', href: '#contact' },
 ];
 
@@ -62,58 +61,46 @@ export default function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-0 w-full backdrop-blur-xl shadow-xl z-50 border-b transition-all duration-500 bg-neutral-900/90 border-neutral-800/50 shadow-black/20"
+            className="fixed top-0 w-full backdrop-blur-md shadow-sm z-50 border-b transition-all duration-300 bg-white/90 border-slate-200/90"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
+                    {/* Academic Logo & Identity */}
                     <div className="flex-shrink-0">
-                        <motion.span 
-                            className="text-xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-purple-400 to-blue-400"
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            ViduzX <span className="text-sm font-normal">| </span>
-                            <motion.a
-                                href="https://xanvia.tech"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm font-normal hover:text-cyan-400 transition-colors duration-300"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                XANVIA
-                            </motion.a>
-                        </motion.span>
+                        <a href="#hero" className="flex items-center gap-3 group">
+                            <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-white font-serif font-bold text-sm shadow-sm group-hover:bg-blue-950 transition-colors">
+                                VS
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="font-serif font-bold text-base sm:text-lg text-slate-900 tracking-tight group-hover:text-blue-900 transition-colors">
+                                    Vidusha Sanidu
+                                </span>
+                                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 -mt-1 hidden sm:block">
+                                    CS Researcher • UOP
+                                </span>
+                            </div>
+                        </a>
                     </div>
 
-                    {/* Desktop Navigation - Centered */}
+                    {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center justify-end flex-1">
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-1 sm:space-x-1.5">
                             {SECTION_LINKS.map((item) => {
                                 const isActive = activeSection === item.href.slice(1);
                                 return (
                                     <motion.a
                                         key={item.label}
                                         href={item.href}
-                                        className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${getThemeFocusRing(currentTheme)} ${
+                                        className={`relative px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
                                             isActive
-                                                ? 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
-                                                : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
+                                                ? 'text-slate-900 bg-slate-100 font-semibold border border-slate-200 shadow-xs'
+                                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                                         }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                         aria-current={isActive ? 'page' : undefined}
                                     >
                                         {item.label}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeNavItem"
-                                                className="absolute inset-0 rounded-xl bg-purple-600 shadow-lg shadow-purple-500/25"
-                                                style={{ zIndex: -1 }}
-                                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                                            />
-                                        )}
                                     </motion.a>
                                 );
                             })}
@@ -126,13 +113,13 @@ export default function Navbar() {
                             ref={buttonRef}
                             aria-label="Toggle navigation menu"
                             aria-expanded={isOpen}
-                            className="p-3 rounded-xl transition-all duration-300 text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10"
+                            className="p-2.5 rounded-lg transition-all duration-200 text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                             onClick={toggleMenu}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             <motion.svg 
-                                className="w-6 h-6" 
+                                className="w-5 h-5" 
                                 fill="none" 
                                 stroke="currentColor" 
                                 viewBox="0 0 24 24"
@@ -160,28 +147,18 @@ export default function Navbar() {
                     {isOpen && (
                         <motion.div
                             ref={menuRef}
-                            initial={{ opacity: 0, y: -10, backdropFilter: 'blur(0px)' }}
+                            initial={{ opacity: 0, y: -8 }}
                             animate={{
                                 opacity: 1,
                                 y: 0,
-                                backdropFilter: 'blur(12px)',
-                                transition: {
-                                    type: "tween",
-                                    ease: [0.4, 0, 0.2, 1],
-                                    duration: 0.18
-                                }
+                                transition: { duration: 0.18 }
                             }}
                             exit={{
                                 opacity: 0,
-                                y: -10,
-                                backdropFilter: 'blur(0px)',
-                                transition: {
-                                    type: "tween",
-                                    ease: [0.4, 0, 0.2, 1],
-                                    duration: 0.15
-                                }
+                                y: -8,
+                                transition: { duration: 0.15 }
                             }}
-                            className={`md:hidden py-4 space-y-2 border-t transition-colors bg-neutral-900/95 border-neutral-800`}
+                            className="md:hidden py-3 space-y-1 border-t transition-colors bg-white/95 border-slate-200 shadow-lg rounded-b-xl"
                         >
                             {SECTION_LINKS.map((item, index) => {
                                 const isActive = activeSection === item.href.slice(1);
@@ -189,20 +166,18 @@ export default function Navbar() {
                                     <motion.a
                                         key={item.label}
                                         href={item.href}
-                                        initial={{ opacity: 0, x: -20 }}
+                                        initial={{ opacity: 0, x: -10 }}
                                         animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.05 }}
-                                        className={`flex items-center px-4 py-3 rounded-xl transition-all duration-300 text-base font-medium ${
+                                        transition={{ delay: index * 0.04 }}
+                                        className={`flex items-center px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium ${
                                             isActive
-                                                ? 'text-white bg-purple-600 shadow-lg shadow-purple-500/25'
-                                                : 'text-neutral-300 hover:text-purple-400 hover:bg-purple-400/10'
+                                                ? 'text-slate-900 bg-slate-100 font-semibold'
+                                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                                         }`}
                                         onClick={() => setIsOpen(false)}
-                                        whileHover={{ x: 5 }}
-                                        whileTap={{ scale: 0.95 }}
                                     >
-                                        <span className="mr-3 text-lg">
-                                            {isActive ? '→' : '·'}
+                                        <span className="mr-2 text-xs text-slate-400">
+                                            {isActive ? '▪' : '▫'}
                                         </span>
                                         {item.label}
                                     </motion.a>

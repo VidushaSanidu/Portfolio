@@ -36,22 +36,22 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle, theme }) => {
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -5, scale: 1.01 }}
+      whileHover={{ y: -4, scale: 1.005 }}
       className={`relative rounded-2xl p-6 md:p-8 border transition-all duration-300 cursor-pointer group ${
         theme === 'minimal'
           ? 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-xl shadow-lg'
-          : 'bg-neutral-800/50 border-neutral-700 hover:border-neutral-600 hover:shadow-2xl shadow-xl shadow-black/10'
+          : 'bg-slate-900/90 border-slate-800 hover:border-slate-700 shadow-xl shadow-black/20'
       }`}
       onClick={onToggle}
     >
       {isCurrentRole && (
         <div className="absolute -top-3 -right-3">
-          <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+          <div className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
             theme === 'minimal'
-              ? 'bg-green-100 text-green-700 border border-green-200'
-              : 'bg-green-900/30 text-green-400 border border-green-500/30'
+              ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+              : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'
           }`}>
-            Current Role
+            Current Appointment
           </div>
         </div>
       )}
@@ -59,7 +59,7 @@ const ExperienceCard = ({ experience, index, isExpanded, onToggle, theme }) => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
         <div className="flex-1">
-          <h3 className={`text-xl md:text-2xl font-bold mb-2 ${
+          <h3 className={`font-serif text-xl md:text-2xl font-bold mb-2 ${
             theme === 'minimal' ? 'text-gray-900' : 'text-white'
           }`}>
             {experience.role}
@@ -249,19 +249,19 @@ export default function Experience() {
       {/* Header */}
       <div className="text-center mb-16">
         <SectionHeading level="section">
-          Professional Experience
+          Systems & Engineering Appointments
         </SectionHeading>
         
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className={`text-lg max-w-2xl mx-auto ${
-            currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+          className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${
+            currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
           }`}
         >
-          Started as an Freelancer in 2023, I have since worked with a variety of clients, ranging from startups to established enterprises.
-           My journey has been marked by continuous learning and adaptation to new technologies and methodologies.
+          Industry software engineering appointments and cloud architecture leadership establishing a rigorous systems foundation for high-performance distributed machine learning.
         </motion.p>
       </div>
 

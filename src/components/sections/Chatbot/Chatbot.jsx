@@ -49,17 +49,17 @@ export default function Chatbot() {
     >
       <div className="text-center mb-12">
         <SectionHeading level="section">
-          Ask My AI Assistant
+          Academic & Research AI Assistant
         </SectionHeading>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className={`text-lg max-w-3xl mx-auto ${currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+          className={`text-sm sm:text-base max-w-3xl mx-auto mt-3 font-sans ${currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
             }`}
         >
-          Have questions about my experience, skills, or projects? Chat with my AI assistant
-          for instant, personalized answers about my career and expertise.
+          Inquire about my research focus in Federated Learning, ongoing preprints, academic background at the University of Peradeniya, or distributed systems engineering.
         </motion.p>
       </div>
 

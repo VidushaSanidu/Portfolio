@@ -3,6 +3,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        serif: ["Newsreader", "Georgia", "Cambria", "Times New Roman", "serif"],
+        mono: ["JetBrains Mono", "SFMono-Regular", "Menlo", "Monaco", "monospace"],
+      },
       spacing: {
         18: "4.5rem",
       },

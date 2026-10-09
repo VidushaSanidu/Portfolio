@@ -48,12 +48,12 @@ export default function ReferenceSection() {
         className="text-center mb-16"
       >
         <SectionHeading level="section">
-          Professional References
+          Collaborator References & Endorsements
         </SectionHeading>
-        <p className={`text-lg max-w-2xl mx-auto mt-2 ${
-          currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+        <p className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${
+          currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
         }`}>
-          Testimonials from colleagues and Clients who have worked with me directly.
+          Endorsements from engineering colleagues, co-founders, and clients who have collaborated with me directly.
         </p>
         
       </motion.div>

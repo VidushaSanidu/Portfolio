@@ -1,10 +1,7 @@
-// Typography utilities for consistent heading styles across themes
+// Typography utilities for scholarly academic heading styles across themes
 
-export const getHeadingClasses = (level = 'section', theme = 'neon') => {
-  const baseClasses = "font-bold bg-clip-text text-transparent";
-  
-  // Only neon gradient
-  const gradient = 'bg-gradient-to-r from-cyan-400 to-purple-400';
+export const getHeadingClasses = (level = 'section') => {
+  const baseClasses = "font-serif font-bold tracking-tight text-slate-900";
 
   // Size patterns by hierarchy level
   const sizes = {
@@ -16,47 +13,52 @@ export const getHeadingClasses = (level = 'section', theme = 'neon') => {
 
   const size = sizes[level] || sizes.section;
 
-  return `${baseClasses} ${size} ${gradient}`;
+  return `${baseClasses} ${size}`;
 };
 
-// Predefined heading component classes
+// Predefined heading component classes for academic light aesthetic
 export const headingStyles = {
   // Hero section - largest and most prominent
   hero: {
-    neon: 'text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent'
+    neon: 'font-serif text-5xl md:text-7xl font-bold tracking-tight text-slate-900',
+    minimal: 'font-serif text-5xl md:text-7xl font-bold tracking-tight text-slate-900'
   },
   
   // Main section headings - consistent across all sections
   section: {
-    neon: 'text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent'
+    neon: 'font-serif text-3xl md:text-4xl font-bold tracking-tight text-slate-900',
+    minimal: 'font-serif text-3xl md:text-4xl font-bold tracking-tight text-slate-900'
   },
 
   // Sub-section headings
   subsection: {
-    neon: 'text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent'
+    neon: 'font-serif text-2xl md:text-3xl font-bold tracking-tight text-slate-800',
+    minimal: 'font-serif text-2xl md:text-3xl font-bold tracking-tight text-slate-800'
   },
 
   // Card/component headings
   card: {
-    neon: 'text-xl md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent'
+    neon: 'font-serif text-xl md:text-2xl font-bold tracking-tight text-slate-900',
+    minimal: 'font-serif text-xl md:text-2xl font-bold tracking-tight text-slate-900'
   }
 };
 
 // Helper function to get spacing classes for consistent margins
 export const getHeadingSpacing = (level = 'section') => {
   const spacing = {
-    hero: 'mb-6 md:mb-8',
-    section: 'mb-6 md:mb-8',
-    subsection: 'mb-4 md:mb-6', 
-    card: 'mb-3 md:mb-4'
+    hero: 'mb-4 md:mb-6',
+    section: 'mb-4 md:mb-6',
+    subsection: 'mb-3 md:mb-4', 
+    card: 'mb-2 md:mb-3'
   };
   
   return spacing[level] || spacing.section;
 };
 
 // Complete heading utility that combines classes and spacing
-export const getCompleteHeadingClasses = (level = 'section', theme = 'neon') => {
-  const headingClass = headingStyles[level]?.neon || headingStyles.section.neon;
+export const getCompleteHeadingClasses = (level = 'section', theme = 'minimal') => {
+  const styleObj = headingStyles[level] || headingStyles.section;
+  const headingClass = styleObj.minimal;
   const spacingClass = getHeadingSpacing(level);
   
   return `${headingClass} ${spacingClass}`;

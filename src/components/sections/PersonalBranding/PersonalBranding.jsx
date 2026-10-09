@@ -2,51 +2,51 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../../contexts/ThemeContext';
 import SectionHeading from '../../ui/common/SectionHeading';
-import { Cpu, Goal, Quote, Route } from 'lucide-react';
+import { Brain, Cpu, Goal, GraduationCap, Quote, Route, ShieldCheck } from 'lucide-react';
 
 const BRAND_ELEMENTS = {
   philosophy: {
-    title: "Developer Philosophy",
+    title: "Research Philosophy",
     icon: <Quote />,
     content: [
-      "Build with purpose, design with empathy",
-      "Lifelong learner, excelling through adaptation",
-      "Innovation through iteration, not perfection",
-      "Building tomorrow's solutions with today's best practices"
+      "Decentralize intelligence, democratize access, and provably protect privacy",
+      "Bridge theoretical machine learning with rigorous distributed systems engineering",
+      "Empirical reproducibility over ephemeral benchmark chasing",
+      "Advancing foundational science for high-stakes societal domains like healthcare"
     ]
   },
   journey: {
-    title: "My Journey",
-    icon: <Route />,
+    title: "Academic & Systems Journey",
+    icon: <GraduationCap />,
     content: [
-      "From curiosity to career - started with 'Hello World'",
-      "Self-taught foundation, university-refined expertise",
-      "Diverse projects across industries and scales",
-      "Building products that solve real problems"
+      "Deep foundational study in Computer Science @ University of Peradeniya (UOP)",
+      "Pivoted from commercial full-stack architecture to decentralized AI research",
+      "Researched Federated Learning for spatial-temporal trajectory forecasting (submitted 2026)",
+      "Currently investigating robust federated paradigms for clinical decision support datasets"
     ]
   },
   values: {
-    title: "Core Values",
-    icon: <Cpu />,
+    title: "Scholarly Values",
+    icon: <ShieldCheck />,
     content: [
-      "Quality over quantity in every deliverable",
-      "Collaborative growth through knowledge sharing",
-      "User-first approach in all design decisions",
-      "Sustainable product for long-term success"
+      "Privacy as a fundamental human right in all machine learning paradigms",
+      "Mathematical rigor in differential privacy & statistical heterogeneity (Non-IID)",
+      "Open scientific collaboration, transparent peer review, and preprint sharing",
+      "Engineering resilient AI deployable on resource-constrained edge hardware"
     ]
   },
   goals: {
-    title: "Career Goals",
+    title: "Research & Scholarly Goals",
     icon: <Goal />,
     content: [
-      "Lead innovative AI-powered development teams",
-      "Contribute to open source projects that matter",
-      "Mentor next generation of developers",
-      "Build products that positively impact millions",
-      "Become influential voice in tech community"
+      "Pursue advanced doctoral (Ph.D.) research in Federated Intelligence & Edge Learning",
+      "Publish impactful breakthroughs in leading ML conferences (NeurIPS, ICML, ICLR)",
+      "Architect privacy-preserving clinical decision support frameworks with hospital networks",
+      "Collaborate globally with interdisciplinary academic labs and researchers"
     ]
   }
 };
+
 
 // const ACHIEVEMENTS = [
 //   {
@@ -245,12 +245,12 @@ export default function PersonalBranding() {
         className="text-center mb-12"
       >
         <SectionHeading level="section">
-          Personal Brand
+          Scholarly Vision & Philosophy
         </SectionHeading>
-        <p className={`text-lg max-w-2xl mx-auto ${
-          theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+        <p className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${
+          theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
         }`}>
-          Beyond the code - discover the philosophy, journey, and vision that drive my development approach.
+          Core scientific principles, academic trajectory, scholarly ethics, and doctoral research objectives.
         </p>
       </motion.div>
 

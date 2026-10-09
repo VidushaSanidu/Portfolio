@@ -1,67 +1,57 @@
-import { Brain, CloudCog, Cpu, FolderGit2, History, MonitorCog, ServerCog, TvMinimal } from "lucide-react";
+import { Brain, Cpu, FolderGit2, History, MonitorCog, ShieldCheck } from "lucide-react";
 
 // Enhanced skills data with proficiency levels and categories
 export const SKILLS_DATA = {
-  "AI & Machine Learning": {
+  "Federated Learning & Privacy-Preserving AI": {
+    icon: ShieldCheck,
+    color: "from-blue-500 to-cyan-500",
+    skills: [
+      { name: "Federated Optimization (FedAvg, FedProx)", level: 90, years: 2, projects: 3 },
+      { name: "Non-IID Data & Client Drift Mitigation", level: 88, years: 2, projects: 2 },
+      { name: "Differential Privacy & Secure Aggregation", level: 85, years: 2, projects: 2 },
+      { name: "Decentralized Edge Learning (Flower/PySyft)", level: 85, years: 2, projects: 3 },
+      { name: "Collaborative Adversarial Robustness", level: 80, years: 1, projects: 2 },
+    ]
+  },
+  "Machine Learning & Deep Learning": {
     icon: Brain,
     color: "from-purple-500 to-pink-500",
     skills: [
-      { name: "LangChain", level: 75, years: 1, projects: 1 },
-      { name: "PyTorch", level: 80, years: 1, projects: 2 },
-      { name: "AI Integration", level: 88, years: 1, projects: 2 },
-      { name: "Machine Learning", level: 85, years: 2, projects: 2 },
-      { name: "AI Automation", level: 90, years: 1, projects: 2 },
+      { name: "PyTorch & Deep Neural Architectures", level: 90, years: 3, projects: 5 },
+      { name: "Spatial-Temporal & Trajectory Modeling", level: 88, years: 2, projects: 2 },
+      { name: "Medical ML & Clinical Datasets", level: 82, years: 2, projects: 2 },
+      { name: "Multi-Agent Systems & Cooperative AI", level: 80, years: 2, projects: 2 },
+      { name: "Statistical Learning & Scikit-learn", level: 92, years: 3, projects: 8 },
     ]
   },
-  "Backend Development": {
+  "Distributed Computing & Edge Intelligence": {
+    icon: Cpu,
+    color: "from-emerald-500 to-teal-500",
+    skills: [
+      { name: "On-Device Training & Quantization", level: 82, years: 2, projects: 2 },
+      { name: "Edge-Cloud Orchestration", level: 85, years: 2, projects: 3 },
+      { name: "Docker & Containerized Clusters", level: 90, years: 3, projects: 5 },
+      { name: "Asynchronous Message Queues (SQS/Redis)", level: 88, years: 3, projects: 4 },
+      { name: "AWS Cloud Infrastructure", level: 88, years: 3, projects: 4 },
+    ]
+  },
+  "Systems & Software Engineering": {
     icon: MonitorCog,
-    color: "from-green-500 to-emerald-500",
-    skills: [
-      { name: "Node.js/Express.js", level: 90, years: 3, projects: 10 },
-      { name: "GoLang", level: 80, years: 1, projects: 1 },
-      { name: "Nest.js", level: 90, years: 3, projects: 5 },
-      { name: "FastAPI", level: 85, years: 1, projects: 3 },
-      { name: "REST APIs", level: 95, years: 3, projects: 18 },
-    ]
-  },
-  "Frontend Development": {
-    icon: TvMinimal,
-    color: "from-blue-500 to-cyan-500",
-    skills: [
-      { name: "Next.js/React.js", level: 90, years: 3, projects: 10 },
-      { name: "TypeScript", level: 90, years: 3, projects: 10 },
-      { name: "Tailwind CSS", level: 90, years: 3, projects: 10 },
-      { name: "JavaScript ES6+", level: 85, years: 3, projects: 10 },
-      { name: "HTML5/CSS3", level: 95, years: 4, projects: 15 },
-    ]
-  },
-  "Cloud & DevOps": {
-    icon: CloudCog,
-    color: "from-orange-500 to-red-500",
-    skills: [
-      { name: "AWS", level: 88, years: 2, projects: 2 },
-      { name: "Docker", level: 92, years: 3, projects: 2 },
-      { name: "Kubernetes", level: 80, years: 2, projects: 1 },
-      { name: "CI/CD Pipelines", level: 90, years: 4, projects: 3 },
-      { name: "Infrastructure as Code", level: 85, years: 3, projects: 1 },
-    ]
-  },
-  "Database & Storage": {
-    icon: ServerCog,
     color: "from-indigo-500 to-purple-500",
     skills: [
-      { name: "MongoDB", level: 90, years: 4, projects: 5 },
-      { name: "PostgreSQL", level: 95, years: 3, projects: 10 },
-      { name: "Redis", level: 80, years: 2, projects: 1 },
-      { name: "DynamoDB", level: 75, years: 2, projects: 1 },
-      { name: "MySQL", level: 90, years: 3, projects: 5 },
+      { name: "Python / C / GoLang", level: 92, years: 4, projects: 12 },
+      { name: "FastAPI / Node.js / Nest.js", level: 90, years: 3, projects: 8 },
+      { name: "Next.js / React.js / TypeScript", level: 88, years: 3, projects: 10 },
+      { name: "PostgreSQL / MongoDB / Vector DBs", level: 90, years: 4, projects: 9 },
+      { name: "CI/CD Pipelines & DevOps", level: 88, years: 3, projects: 5 },
     ]
   }
 };
 
 export const QUICK_STATS = [
-  { label: "Years Experience", value: "4+", icon: History },
-  { label: "Projects Built", value: "20+", icon: FolderGit2 },
-  { label: "Technologies", value: "20+", icon: Cpu },
-  { label: "AI Solutions", value: "5+", icon: Brain },
+  { label: "Research Pillars", value: "4", icon: Brain },
+  { label: "Publications / Preprints", value: "2+", icon: FolderGit2 },
+  { label: "Years in AI & Systems", value: "4+", icon: History },
+  { label: "Engineered Systems", value: "20+", icon: Cpu },
 ];
+

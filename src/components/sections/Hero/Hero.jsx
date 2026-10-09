@@ -1,80 +1,45 @@
 import { motion } from "framer-motion";
-import { HERO_CONTENT } from "../../../constants/constants";
+import { HERO_CONTENT, CONTACT } from "../../../constants/constants";
 import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { HiDownload, HiMail, HiLocationMarker } from 'react-icons/hi';
-import { FaLinkedin, FaGithub, FaMediumM } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiGooglescholar, SiOrcid } from 'react-icons/si';
+import { GraduationCap, BookOpen, ShieldCheck } from 'lucide-react';
+
 import { useCV } from '../../../hooks/useCV';
 import Button from '../../ui/common/Button';
 import profileImage from '../../../assets/pro4.png';
-import {
-    containerVariants,
-    itemVariants,
-    titleVariants,
-    floatingShapeVariants,
-    floatingShapeVariantsReduced,
-    cursorGlowVariants,
-    profileCardVariants
-} from "./animations";
 import { QUICK_STATS } from "../../../constants/skills";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.12,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut" }
+    },
+};
 
 export default function Hero() {
     const { cvUrl, isLoading } = useCV();
-    const typedRole = useTypingAnimation(HERO_CONTENT.roles, 150, 100, 2000);
-
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const shapeVariants = prefersReducedMotion ? floatingShapeVariantsReduced : floatingShapeVariants;
+    const typedRole = useTypingAnimation(HERO_CONTENT.roles, 120, 80, 2200);
 
     return (
-        <section className="relative py-16 md:py-24 px-4 overflow-hidden">
-            {/* Floating Geometric Shapes Background with Beautiful Animations */}
+        <section className="relative py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            {/* Subtle academic background ambiance - light parchment & cool slate tone */}
             <div className="absolute inset-0 pointer-events-none">
-                {/* Enhanced background glow with subtle scale animation */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 2, ease: "easeOut" }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl bg-gradient-to-r from-purple-500/10 to-blue-500/10"
-                />
-
-                {/* Original floating geometric shapes */}
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-sm will-change-transform"
-                />
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    style={{ animationDelay: "2s" }}
-                    className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rotate-45 blur-sm will-change-transform"
-                />
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    style={{ animationDelay: "4s" }}
-                    className="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-sm will-change-transform"
-                />
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    style={{ animationDelay: "6s" }}
-                    className="absolute bottom-40 right-1/3 w-24 h-24 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 rotate-12 blur-sm will-change-transform"
-                />
-
-                {/* Additional smaller floating elements */}
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    style={{ animationDelay: "1s" }}
-                    className="absolute top-32 left-1/3 w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-sm will-change-transform"
-                />
-                <motion.div
-                    variants={shapeVariants}
-                    animate="animate"
-                    style={{ animationDelay: "5s" }}
-                    className="absolute bottom-32 right-1/4 w-6 h-6 bg-gradient-to-r from-purple-400/25 to-pink-400/25 rotate-45 blur-sm will-change-transform"
-                />
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[360px] rounded-full blur-3xl bg-blue-100/40" />
             </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
@@ -82,223 +47,231 @@ export default function Hero() {
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
-                    className="grid lg:grid-cols-3 gap-12 items-center"
+                    className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center"
                 >
-                    {/* Main Content - Left Side */}
-                    <div className="lg:col-span-2 space-y-8">
-                        <motion.div variants={titleVariants} className="space-y-4">
-                            <h1 className="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r bg-clip-text text-transparent from-white via-purple-200 to-blue-200">
-                                {HERO_CONTENT.name}
-                            </h1>
-
-                            <div className="text-2xl md:text-3xl font-medium h-12 flex items-center text-purple-300">
-                                <span className="mr-3">{typedRole}</span>
-                                <motion.span
-                                    variants={cursorGlowVariants}
-                                    animate="blink"
-                                    className="inline-block w-1 h-8 rounded-full bg-purple-400"
-                                />
+                    {/* Main Scholarly Content - Left Side (7 cols) */}
+                    <div className="lg:col-span-7 space-y-6">
+                        {/* Institutional Affiliation Eyebrow */}
+                        <motion.div variants={itemVariants}>
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wide bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs">
+                                <GraduationCap className="w-4 h-4 text-blue-900 flex-shrink-0" />
+                                <span>University of Peradeniya • CS Honors Scholar</span>
                             </div>
                         </motion.div>
 
+                        {/* Scholar Name & Academic Designation */}
+                        <motion.div variants={itemVariants} className="space-y-2">
+                            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-900 leading-tight">
+                                {HERO_CONTENT.name}
+                            </h1>
+
+                            <div className="flex flex-wrap items-center gap-2 pt-1">
+                                <span className="font-serif italic text-xl sm:text-2xl text-slate-700">
+                                    Computer Science Researcher
+                                </span>
+                                <span className="text-slate-400 hidden sm:inline">•</span>
+                                <div className="text-xs sm:text-sm font-mono text-slate-800 flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200">
+                                    <span>{typedRole}</span>
+                                    <span className="inline-block w-1.5 h-3.5 bg-blue-900 animate-pulse" />
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Research Focus Summary */}
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg md:text-xl leading-relaxed text-neutral-300"
+                            className="text-base sm:text-lg leading-relaxed text-slate-600 font-sans"
                         >
                             {HERO_CONTENT.summary}
                         </motion.p>
 
-                        {/* Action Buttons */}
+                        {/* Academic Highlights List */}
+                        <motion.div variants={itemVariants} className="grid sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700 pt-1">
+                            {HERO_CONTENT.highlights.slice(0, 4).map((highlight, idx) => (
+                                <div key={idx} className="flex items-start gap-2">
+                                    <span className="text-blue-900 font-mono text-xs mt-0.5">▪</span>
+                                    <span>{highlight}</span>
+                                </div>
+                            ))}
+                        </motion.div>
+
+                        {/* Primary Academic Action Buttons */}
                         <motion.div
                             variants={itemVariants}
-                            className="flex flex-wrap gap-4"
+                            className="flex flex-wrap items-center gap-3 pt-2"
                         >
+                            <Button
+                                as="a"
+                                href="#research"
+                                variant="primary"
+                                size="md"
+                                className="group !bg-slate-900 hover:!bg-slate-800 !text-white !border !border-slate-900 shadow-xs"
+                            >
+                                <BookOpen className="text-lg text-blue-300 transition-transform group-hover:scale-110" />
+                                <span>Selected Research</span>
+                            </Button>
+
                             <Button
                                 as="a"
                                 href={cvUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                variant="primary"
-                                size="lg"
+                                variant="secondary"
+                                size="md"
                                 loading={isLoading}
-                                className="group"
+                                className="group !bg-white !border-slate-300 !text-slate-800 hover:!bg-slate-50 shadow-2xs"
                             >
-                                <HiDownload className="text-xl transition-transform group-hover:scale-110" />
-                                <span>Download CV</span>
+                                <HiDownload className="text-lg text-slate-700 transition-transform group-hover:scale-110" />
+                                <span>Academic CV (PDF)</span>
                             </Button>
 
                             <Button
                                 as="a"
                                 href="#contact"
                                 variant="secondary"
-                                size="lg"
-                                className="group"
+                                size="md"
+                                className="group !bg-white !border-slate-300 !text-slate-800 hover:!bg-slate-50 shadow-2xs"
                             >
-                                <HiMail className="text-xl transition-transform group-hover:scale-110" />
-                                <span>Get In Touch</span>
+                                <HiMail className="text-lg text-slate-700 transition-transform group-hover:scale-110" />
+                                <span>Inquiries</span>
                             </Button>
+                        </motion.div>
+
+                        {/* Scholar Index Badges (Scholar, ORCID, GitHub, LinkedIn) */}
+                        <motion.div
+                            variants={itemVariants}
+                            className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-200"
+                        >
+                            <span className="text-xs font-mono uppercase tracking-wider text-slate-500 mr-2">
+                                Academic Profiles:
+                            </span>
+
+                            <a
+                                href={CONTACT.socials.scholar}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <SiGooglescholar className="text-blue-600" />
+                                <span>Google Scholar</span>
+                            </a>
+
+                            <a
+                                href={CONTACT.socials.orcid}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <SiOrcid className="text-emerald-600" />
+                                <span>ORCID</span>
+                            </a>
+
+                            <a
+                                href={CONTACT.socials.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <FaGithub className="text-slate-900" />
+                                <span>GitHub</span>
+                            </a>
+
+                            <a
+                                href={CONTACT.socials.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <FaLinkedin className="text-blue-700" />
+                                <span>LinkedIn</span>
+                            </a>
                         </motion.div>
                     </div>
 
-                    {/* Profile Card - Right Side */}
+                    {/* Academic Profile Directory Card - Right Side (5 cols) */}
                     <motion.div
                         variants={itemVariants}
-                        animate="animate"
-                        className="relative group"
+                        className="lg:col-span-5"
                     >
-                        <motion.div
-                            variants={profileCardVariants}
-                            animate="animate"
-                            className="relative"
-                        >
-                            {/* Iconic Profile Card with Neon Border Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-3xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
-                        
-                                                    
-                            <div className="relative bg-neutral-900/95 backdrop-blur-xl rounded-3xl p-8 border border-neutral-700/50 overflow-hidden">
-                                {/* Animated Background Pattern */}
-                                <div className="absolute inset-0 opacity-5">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-purple-400/20" />
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                        <div className="relative rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 shadow-md">
+                            {/* Academic Header Badge */}
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                                <div className="flex items-center gap-2">
+                                    <ShieldCheck className="w-4 h-4 text-blue-900" />
+                                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500">
+                                        Faculty Directory Listing
+                                    </span>
                                 </div>
-
-                                {/* Profile Image Container */}
-                                <motion.div
-                                    initial={{ scale: 0, rotate: -10 }}
-                                    animate={{ scale: 1, rotate: 0 }}
-                                    transition={{ delay: 0.3, duration: 0.8, type: "spring", bounce: 0.4 }}
-                                    className="relative mb-6 mx-auto w-72 h-72"
-                                >
-                                    {/* Rotating Glow Ring */}
-                                    <motion.div
-                                        animate={{ rotate: 360 }}
-                                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                        className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-1"
-                                    >
-                                        <div className="w-full h-full rounded-full bg-neutral-900" />
-                                    </motion.div>
-
-                                    {/* Profile Image with Fallback */}
-                                    <div className="absolute inset-2 rounded-full bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center overflow-hidden">
-                                        <img 
-                                            src={profileImage} 
-                                            alt="Vidusha Sanidu Profile" 
-                                            className="w-full h-full object-cover"
-                                            onError={(e) => {
-                                                // Fallback to initials if image fails to load
-                                                e.target.style.display = 'none';
-                                                e.target.nextSibling.style.display = 'flex';
-                                            }}
-                                        />
-                                        <div className="text-4xl font-bold text-white hidden items-center justify-center w-full h-full">
-                                            {HERO_CONTENT.name.split(' ').map(n => n[0]).join('')}
-                                        </div>
-                                    </div>
-
-                                    {/* Status Indicator */}
-                                    <motion.div
-                                        animate={{ scale: [1, 1.2, 1] }}
-                                        transition={{ duration: 2, repeat: Infinity }}
-                                        className="absolute bottom-5 right-10 w-6 h-6 bg-green-400 rounded-full border-4 border-neutral-900 shadow-lg"
-                                    />
-                                </motion.div>
-
-                                {/* Name and Status */}
-                                <div className="text-center mb-6">
-                                    <motion.h3
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.5 }}
-                                        className="text-2xl font-bold text-white mb-2"
-                                    >
-                                        {HERO_CONTENT.name}
-                                    </motion.h3>
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 0.6 }}
-                                        className="inline-flex items-center gap-2 px-3 py-1 bg-green-400/20 text-green-300 rounded-full text-sm font-medium"
-                                    >
-                                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                                        Available for projects
-                                    </motion.div>
-                                </div>
-
-                                {/* Location */}
-                                <motion.div
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.7 }}
-                                    className="flex items-center justify-center gap-3 mb-6 text-neutral-300"
-                                >
-                                    <HiLocationMarker className="text-xl text-cyan-400" />
-                                    <span className="font-medium">Colombo, Sri Lanka</span>
-                                </motion.div>
-
-                                {/* Social Links with Enhanced Animations */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.8 }}
-                                    className="flex justify-center gap-4"
-                                >
-                                    <motion.a
-                                        href="https://www.linkedin.com/in/vidushasanidu"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="relative group/social p-3 rounded-xl bg-neutral-800/50 border border-neutral-700 hover:border-blue-400 transition-all duration-300"
-                                        whileHover={{ scale: 1.1, y: -2 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <FaLinkedin className="text-2xl text-neutral-400 group-hover/social:text-blue-400 transition-colors duration-300" />
-                                        <div className="absolute inset-0 rounded-xl bg-blue-400/0 group-hover/social:bg-blue-400/10 transition-all duration-300" />
-                                    </motion.a>
-
-                                    <motion.a
-                                        href="https://github.com/VidushaSanidu"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="relative group/social p-3 rounded-xl bg-neutral-800/50 border border-neutral-700 hover:border-purple-400 transition-all duration-300"
-                                        whileHover={{ scale: 1.1, y: -2 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <FaGithub className="text-2xl text-neutral-400 group-hover/social:text-purple-400 transition-colors duration-300" />
-                                        <div className="absolute inset-0 rounded-xl bg-purple-400/0 group-hover/social:bg-purple-400/10 transition-all duration-300" />
-                                    </motion.a>
-
-                                    <motion.a
-                                        href="https://medium.com/@vidushsanidu07"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="relative group/social p-3 rounded-xl bg-neutral-800/50 border border-neutral-700 hover:border-cyan-400 transition-all duration-300"
-                                        whileHover={{ scale: 1.1, y: -2 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        <FaMediumM className="text-2xl text-neutral-400 group-hover/social:text-cyan-400 transition-colors duration-300" />
-                                        <div className="absolute inset-0 rounded-xl bg-cyan-400/0 group-hover/social:bg-cyan-400/10 transition-all duration-300" />
-                                    </motion.a>
-                                </motion.div>
-
-                                {/* Quick Stats or Additional Info */}
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 1 }}
-                                    className="mt-6 pt-6 border-t border-neutral-700/50"
-                                >
-                                    <div className="grid grid-cols-2 gap-4 text-center">
-                                        <div>
-                                            <div className="text-2xl font-bold text-cyan-400">{QUICK_STATS[0].value}</div>
-                                            <div className="text-sm text-neutral-400">Years Experience</div>
-                                        </div>
-                                        <div>
-                                            <div className="text-2xl font-bold text-purple-400">{QUICK_STATS[1].value}</div>
-                                            <div className="text-sm text-neutral-400">Projects Completed</div>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                                <span className="text-xs font-mono text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 font-medium">
+                                    UOP • CS
+                                </span>
                             </div>
-                        </motion.div>
+
+                            {/* Portrait Frame - Understated & Scholarly */}
+                            <div className="relative mx-auto mb-5 w-56 h-56 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-xs">
+                                <img 
+                                    src={profileImage} 
+                                    alt="Vidusha Sanidu" 
+                                    className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-300"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none';
+                                        e.target.nextSibling.style.display = 'flex';
+                                    }}
+                                />
+                                <div className="text-3xl font-serif font-bold text-slate-400 hidden items-center justify-center w-full h-full">
+                                    VS
+                                </div>
+                            </div>
+
+                            {/* Scholar Details */}
+                            <div className="text-center space-y-1 mb-5">
+                                <h3 className="font-serif text-2xl font-bold text-slate-900">
+                                    {HERO_CONTENT.name}
+                                </h3>
+                                <p className="text-xs font-medium text-blue-900 font-mono">
+                                    B.Sc. (Hons) in Computer Science Candidate
+                                </p>
+                                <p className="text-xs text-slate-500">
+                                    Department of Statistics & Computer Science
+                                </p>
+                                <p className="text-xs text-slate-700 font-medium">
+                                    University of Peradeniya (UOP)
+                                </p>
+                            </div>
+
+                            {/* Location & Status Badge */}
+                            <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs">
+                                <div className="flex items-center justify-center gap-2 text-slate-600">
+                                    <HiLocationMarker className="text-slate-400" />
+                                    <span>Peradeniya / Colombo, Sri Lanka</span>
+                                </div>
+
+                                <div className="flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[11px] font-medium">
+                                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                    <span>Open to Preprints & Graduate Opportunities</span>
+                                </div>
+                            </div>
+
+                            {/* Key Stats Counter */}
+                            <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3 text-center">
+                                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80">
+                                    <div className="text-xl font-bold font-serif text-slate-900">
+                                        {QUICK_STATS[0].value}
+                                    </div>
+                                    <div className="text-[11px] font-mono text-slate-500">
+                                        {QUICK_STATS[0].label}
+                                    </div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80">
+                                    <div className="text-xl font-bold font-serif text-blue-900">
+                                        {QUICK_STATS[1].value}
+                                    </div>
+                                    <div className="text-[11px] font-mono text-slate-500">
+                                        {QUICK_STATS[1].label}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>

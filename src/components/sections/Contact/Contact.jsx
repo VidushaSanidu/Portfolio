@@ -47,16 +47,16 @@ export default function Contact() {
                     {/* Header */}
                     <motion.div className="text-center" variants={itemVariants}>
                         <SectionHeading level="section">
-                            Get in Touch
+                            Academic & Research Inquiries
                         </SectionHeading>
                     </motion.div>
 
                     <motion.p
                         variants={itemVariants}
-                        className={`text-lg text-center mb-12 max-w-2xl mx-auto ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+                        className={`text-sm sm:text-base text-center mb-12 max-w-2xl mx-auto font-sans ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
                             }`}
                     >
-                        Ready to bring your ideas to life? Let&apos;s discuss your project and explore how we can work together.
+                        Open to discussions regarding prospective graduate research (M.Sc. / Ph.D.), collaborative preprints in Federated Learning, and interdisciplinary initiatives.
                     </motion.p>
 
                     {/* Tab Navigation */}

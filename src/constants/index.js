@@ -2,6 +2,8 @@
 export * from './constants';
 
 // Data constants
+export * from './research';
+export * from './timeline';
 export * from './experiences';
 export * from './projects';
 export * from './references';

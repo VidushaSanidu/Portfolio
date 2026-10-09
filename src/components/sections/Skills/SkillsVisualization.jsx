@@ -122,9 +122,9 @@ const CategoryCard = ({ category, data, index, activeCategory, setActiveCategory
         relative rounded-xl p-6 cursor-pointer transition-all duration-300
         ${theme.currentTheme === 'minimal'
           ? 'bg-white border border-gray-200 hover:border-gray-300'
-          : 'bg-neutral-800/50 border border-neutral-700/50 hover:border-neutral-600/50'
+          : 'bg-slate-900/90 border border-slate-800 hover:border-slate-700'
         }
-        ${isActive ? 'ring-2 ring-purple-500 ring-opacity-50' : ''}
+        ${isActive ? 'ring-1 ring-cyan-500/60 border-slate-600' : ''}
       `}
       onClick={() => setActiveCategory(isActive ? null : category)}
       whileHover={{ scale: 1.02 }}
@@ -218,18 +218,18 @@ export default function SkillsVisualization() {
     <section className="max-w-6xl mx-auto py-16 px-4 lg:px-8">
       {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
         <SectionHeading level="section">
-          Skills & Expertise
+          Technical & Research Competencies
         </SectionHeading>
-        <p className={`text-lg max-w-2xl mx-auto ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-neutral-400'
+        <p className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${theme.currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
           }`}>
-          Interactive visualization of my technical skills, experience levels, and project involvement.
-          Click on any category to explore detailed proficiency levels.
+          Taxonomy of research frameworks, machine learning libraries, distributed orchestration, and production engineering systems. Click on any domain to inspect proficiencies.
         </p>
       </motion.div>
 

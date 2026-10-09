@@ -10,6 +10,8 @@ import { ToastProvider } from "./components/ui/common/Toast";
 
 const Navbar = lazy(() => import("./components/layout/Navbar"));
 const Hero = lazy(() => import("./components/sections/Hero/Hero"));
+const Research = lazy(() => import("./components/sections/Research"));
+const Timeline = lazy(() => import("./components/sections/Timeline"));
 const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
@@ -37,21 +39,19 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden antialiased transition-colors duration-500 text-neutral-300">
+    <div className="overflow-x-hidden antialiased transition-colors duration-500 text-slate-800 bg-[#f8fafc]">
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
 
-      {/* Enhanced Parallax Background */}
-      {/* <ParallaxBackground /> */}
-
-      {/* Neon Theme Background */}
-      <div className="fixed top-0 -z-20 h-full w-full">
+      {/* Academic Research Light Theme Background */}
+      <div className="fixed top-0 -z-20 h-full w-full pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="absolute top-0 h-screen w-screen transition-all duration-500 bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,255,255,0.15),rgba(255,0,255,0.1))]"
+          className="absolute top-0 h-screen w-screen transition-all duration-500 bg-[#f8fafc] bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(224,231,255,0.35),rgba(248,250,252,0.98))]"
         >
-          <div className="absolute inset-0 bg-[url('./assets/grid.svg')] opacity-10" />
+          {/* Subtle architectural dot lattice */}
+          <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-35" />
         </motion.div>
       </div>
 
@@ -64,13 +64,19 @@ function AppContent() {
           </section>
         </ErrorBoundary>
 
-        <ErrorBoundary sectionName="chatbot section">
-          <section id="chatbot">
-            <Chatbot />
-          </section>
-        </ErrorBoundary>
+        <div className="space-y-16 md:space-y-24">
+          <ErrorBoundary sectionName="research section">
+            <section id="research">
+              <Research />
+            </section>
+          </ErrorBoundary>
 
-        <div className="space-y-8 md:space-y-8">
+          <ErrorBoundary sectionName="timeline section">
+            <section id="timeline">
+              <Timeline />
+            </section>
+          </ErrorBoundary>
+
           <ErrorBoundary sectionName="experience section">
             <section id="experience">
               <Experience />
@@ -98,12 +104,6 @@ function AppContent() {
           <ErrorBoundary sectionName="personal branding section">
             <section id="brand">
               <PersonalBranding />
-            </section>
-          </ErrorBoundary>
-
-          <ErrorBoundary sectionName="GitHub activity section">
-            <section id="github">
-              <GitHubActivity />
             </section>
           </ErrorBoundary>
 
