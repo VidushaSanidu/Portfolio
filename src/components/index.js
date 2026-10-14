@@ -10,7 +10,6 @@ export { default as Skills } from './sections/Skills';
 export { default as Projects } from './sections/Projects';
 export { default as Blog } from './sections/Blog';
 export { default as References } from './sections/References';
-export { default as PersonalBranding } from './sections/PersonalBranding';
 export { default as GitHubActivity } from './sections/GitHubActivity';
 export { default as Chatbot } from './sections/Chatbot';
 export { default as Contact } from './sections/Contact';

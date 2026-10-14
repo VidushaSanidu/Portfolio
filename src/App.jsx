@@ -15,7 +15,6 @@ const Timeline = lazy(() => import("./components/sections/Timeline"));
 const Projects = lazy(() => import("./components/sections/Projects"));
 const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
-const PersonalBranding = lazy(() => import("./components/sections/PersonalBranding"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 
 function AppContent() {
@@ -92,11 +91,6 @@ function AppContent() {
             </section>
           </ErrorBoundary>
 
-          <ErrorBoundary sectionName="personal branding section">
-            <section id="brand">
-              <PersonalBranding />
-            </section>
-          </ErrorBoundary>
 
           <ErrorBoundary sectionName="contact section">
             <section id="contact">
