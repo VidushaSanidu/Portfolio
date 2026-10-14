@@ -8,7 +8,7 @@ import { BookOpen } from 'lucide-react';
 
 import { useCV } from '../../../hooks/useCV';
 import Button from '../../ui/common/Button';
-import profileImage from '../../../assets/pro4.png';
+import profileImage from '../../../assets/pro5.png';
 import { QUICK_STATS } from "../../../constants/skills";
 
 const containerVariants = {
