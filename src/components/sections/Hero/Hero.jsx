@@ -4,7 +4,7 @@ import { useTypingAnimation } from "../../../hooks/useTypingAnimation";
 import { HiDownload, HiMail, HiLocationMarker } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { SiGooglescholar, SiOrcid } from 'react-icons/si';
-import { GraduationCap, BookOpen, ShieldCheck } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 import { useCV } from '../../../hooks/useCV';
 import Button from '../../ui/common/Button';
@@ -141,6 +141,27 @@ export default function Hero() {
                             </span>
 
                             <a
+                                href={CONTACT.socials.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <FaLinkedin className="text-blue-700" />
+                                <span>LinkedIn</span>
+                            </a>
+
+                            <a
+                                href={CONTACT.socials.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
+                            >
+                                <FaGithub className="text-slate-900" />
+                                <span>GitHub</span>
+                            </a>
+
+
+                            <a
                                 href={CONTACT.socials.scholar}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -160,25 +181,8 @@ export default function Hero() {
                                 <span>ORCID</span>
                             </a>
 
-                            <a
-                                href={CONTACT.socials.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
-                            >
-                                <FaGithub className="text-slate-900" />
-                                <span>GitHub</span>
-                            </a>
 
-                            <a
-                                href={CONTACT.socials.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-2xs transition-colors"
-                            >
-                                <FaLinkedin className="text-blue-700" />
-                                <span>LinkedIn</span>
-                            </a>
+
                         </motion.div>
                     </div>
 
@@ -191,9 +195,9 @@ export default function Hero() {
                             {/* Academic Header Badge */}
                             <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
                                 <div className="flex items-center gap-2">
-                                    <ShieldCheck className="w-4 h-4 text-blue-900" />
-                                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500">
-                                        Faculty Directory Listing
+                                    <span className="w-2 h-2 rounded-full bg-blue-600" />
+                                    <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-medium">
+                                        Academic Profile
                                     </span>
                                 </div>
                                 <span className="text-xs font-mono text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 font-medium">
@@ -218,18 +222,21 @@ export default function Hero() {
                             </div>
 
                             {/* Scholar Details */}
-                            <div className="text-center space-y-1 mb-5">
+                            <div className="text-center space-y-1.5 mb-5">
                                 <h3 className="font-serif text-2xl font-bold text-slate-900">
                                     {HERO_CONTENT.name}
                                 </h3>
-                                <p className="text-xs font-medium text-blue-900 font-mono">
-                                    B.Sc. (Hons) in Computer Science Candidate
+                                <p className="text-xs font-semibold text-blue-900 font-mono">
+                                    {HERO_CONTENT.roles[0]}
+                                </p>
+                                <p className="text-xs font-medium text-slate-700">
+                                    {HERO_CONTENT.degree}
                                 </p>
                                 <p className="text-xs text-slate-500">
                                     Department of Statistics & Computer Science
                                 </p>
                                 <p className="text-xs text-slate-700 font-medium">
-                                    University of Peradeniya (UOP)
+                                    {HERO_CONTENT.affiliation}
                                 </p>
                             </div>
 
@@ -237,12 +244,12 @@ export default function Hero() {
                             <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs">
                                 <div className="flex items-center justify-center gap-2 text-slate-600">
                                     <HiLocationMarker className="text-slate-400" />
-                                    <span>Peradeniya / Colombo, Sri Lanka</span>
+                                    <span>Colombo, Sri Lanka</span>
                                 </div>
 
                                 <div className="flex items-center justify-center gap-2 py-1.5 px-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-[11px] font-medium">
                                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span>Open to Preprints & Graduate Opportunities</span>
+                                    <span>Open to Research Collaborations & Graduate Studies</span>
                                 </div>
                             </div>
 
@@ -250,18 +257,18 @@ export default function Hero() {
                             <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3 text-center">
                                 <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80">
                                     <div className="text-xl font-bold font-serif text-slate-900">
-                                        {QUICK_STATS[0].value}
-                                    </div>
-                                    <div className="text-[11px] font-mono text-slate-500">
-                                        {QUICK_STATS[0].label}
-                                    </div>
-                                </div>
-                                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80">
-                                    <div className="text-xl font-bold font-serif text-blue-900">
                                         {QUICK_STATS[1].value}
                                     </div>
                                     <div className="text-[11px] font-mono text-slate-500">
                                         {QUICK_STATS[1].label}
+                                    </div>
+                                </div>
+                                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80">
+                                    <div className="text-xl font-bold font-serif text-blue-900">
+                                        {QUICK_STATS[2].value}
+                                    </div>
+                                    <div className="text-[11px] font-mono text-slate-500">
+                                        {QUICK_STATS[2].label}
                                     </div>
                                 </div>
                             </div>

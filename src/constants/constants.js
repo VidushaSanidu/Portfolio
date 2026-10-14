@@ -4,20 +4,19 @@ export const HERO_CONTENT = {
   degree: "B.Sc. (Hons) in Computer Science",
   status: "Open to Research Collaborations & Graduate Studies",
   roles: [
-    "AI & Federated Learning Researcher",
+    "Research Assistant @ URC, UOP",
     "Computer Science Graduate @ UOP",
-    "Privacy-Preserving ML Engineer",
-    "Distributed Intelligence Specialist",
-    "Medical AI & Deep Learning Researcher",
+    "AI & Distributed Intelligence Researcher",
+    "AI/ ML Engineer",
+    "Medical AI & Machine Learning Researcher",
   ],
-  summary: `Computer Science researcher and engineer focusing on distributed intelligence, edge learning, and privacy-preserving machine learning frameworks. Affiliated with the University of Peradeniya (UOP), specializing in Federated Learning (FL), spatial-temporal trajectory modeling, non-IID client drift mitigation, and clinical decision support datasets.`,
+  summary: `Research Assistant and Computer Science graduate at the University of Peradeniya, Sri Lanka. My primary research interests lie at the intersection of Federated Learning, privacy-preserving machine learning, and distributed optimization. I focus on developing decentralized architectures that perform reliably under client heterogeneity and computational constraints.`,
   highlights: [
     "Federated Learning (FL) & Aggregation Algorithms",
-    "Privacy & Security in AI (Differential Privacy, Secure Aggregation)",
-    "Distributed Computing & Edge Intelligence",
+    "Privacy-Preserving & Personalized Federated Learning",
     "Machine Learning in Healthcare & Medical Decision Support",
+    "Distributed Computing & Edge Intelligence",
     "Multi-Agent Systems & Deep Learning Architectures",
-    "High-Performance Systems & Cloud Orchestration",
   ],
 };
 
@@ -28,7 +27,7 @@ export const CONTACT = {
   email: "vidushsanidu07@gmail.com",
   socials: {
     scholar: "https://scholar.google.com",
-    orcid: "https://orcid.org",
+    orcid: "https://orcid.org/0009-0003-6807-4815",
     github: "https://github.com/VidushaSanidu",
     linkedin: "https://www.linkedin.com/in/vidushasanidu",
     kaggle: "https://kaggle.com/vidushasanidu",
