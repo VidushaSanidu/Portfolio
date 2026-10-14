@@ -10,10 +10,10 @@ import { ToastProvider } from "./components/ui/common/Toast";
 
 const Navbar = lazy(() => import("./components/layout/Navbar"));
 const Hero = lazy(() => import("./components/sections/Hero/Hero"));
+const Education = lazy(() => import("./components/sections/Education"));
 const Research = lazy(() => import("./components/sections/Research"));
 const Timeline = lazy(() => import("./components/sections/Timeline"));
 const Projects = lazy(() => import("./components/sections/Projects"));
-const Experience = lazy(() => import("./components/sections/Experience"));
 const SkillsVisualization = lazy(() => import("./components/sections/Skills"));
 const Contact = lazy(() => import("./components/sections/Contact"));
 
@@ -61,6 +61,12 @@ function AppContent() {
         </ErrorBoundary>
 
         <div className="space-y-16 md:space-y-24">
+          <ErrorBoundary sectionName="education section">
+            <section id="education">
+              <Education />
+            </section>
+          </ErrorBoundary>
+
           <ErrorBoundary sectionName="research section">
             <section id="research">
               <Research />
@@ -73,11 +79,6 @@ function AppContent() {
             </section>
           </ErrorBoundary>
 
-          <ErrorBoundary sectionName="experience section">
-            <section id="experience">
-              <Experience />
-            </section>
-          </ErrorBoundary>
 
           <ErrorBoundary sectionName="skills section">
             <section id="skills">

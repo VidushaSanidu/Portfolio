@@ -5,9 +5,9 @@ import { getThemeFocusRing } from '../../../utils/accessibility';
 
 const SECTION_LINKS = [
     { label: 'Home', href: '#hero' },
+    { label: 'Background', href: '#education' },
     { label: 'Research', href: '#research' },
     { label: 'Timeline', href: '#timeline' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
@@ -92,8 +92,8 @@ export default function Navbar() {
                                         key={item.label}
                                         href={item.href}
                                         className={`relative px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${isActive
-                                                ? 'text-slate-900 bg-slate-100 font-semibold border border-slate-200 shadow-xs'
-                                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                                            ? 'text-slate-900 bg-slate-100 font-semibold border border-slate-200 shadow-xs'
+                                            : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                                             }`}
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
@@ -169,8 +169,8 @@ export default function Navbar() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.04 }}
                                         className={`flex items-center px-4 py-2.5 rounded-lg transition-all duration-200 text-sm font-medium ${isActive
-                                                ? 'text-slate-900 bg-slate-100 font-semibold'
-                                                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                            ? 'text-slate-900 bg-slate-100 font-semibold'
+                                            : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                                             }`}
                                         onClick={() => setIsOpen(false)}
                                     >

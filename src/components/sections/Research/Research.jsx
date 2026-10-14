@@ -62,7 +62,7 @@ export default function Research() {
       >
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase mb-3 bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs">
           <BookOpen className="w-3.5 h-3.5 text-blue-900" />
-          <span>Academic Profile & Scholarship</span>
+          <span>Research Profile</span>
         </div>
 
         <SectionHeading level="section">
@@ -170,9 +170,8 @@ export default function Research() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
                 onClick={() => setSelectedPillar(isSelected ? null : pillar.id)}
-                className={`rounded-2xl p-6 sm:p-7 border cursor-pointer transition-all duration-300 bg-white shadow-xs hover:shadow-md ${
-                  isSelected ? 'border-blue-900 ring-1 ring-blue-900/30' : 'border-slate-200 hover:border-slate-300'
-                }`}
+                className={`rounded-2xl p-6 sm:p-7 border cursor-pointer transition-all duration-300 bg-white shadow-xs hover:shadow-md ${isSelected ? 'border-blue-900 ring-1 ring-blue-900/30' : 'border-slate-200 hover:border-slate-300'
+                  }`}
               >
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div className="flex items-center gap-3">

@@ -3,6 +3,7 @@ export { default as Navbar } from './layout/Navbar';
 
 // Section Components
 export { default as Hero } from './sections/Hero/Hero';
+export { default as Education } from './sections/Education';
 export { default as Research } from './sections/Research';
 export { default as Timeline } from './sections/Timeline';
 export { default as Experience } from './sections/Experience';
