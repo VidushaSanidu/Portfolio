@@ -23,7 +23,7 @@ export const HERO_CONTENT = {
 
 
 export const CONTACT = {
-  address: "Colombo / Peradeniya, Sri Lanka",
+  address: "Colombo, Sri Lanka",
   phoneNo: "+94 76 041 6256",
   email: "vidushsanidu07@gmail.com",
   socials: {
