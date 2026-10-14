@@ -23,16 +23,15 @@ export default function Projects() {
         <section className="max-w-7xl mx-auto py-12 px-4 lg:px-8">
             <div className="text-center mb-16">
                 <SectionHeading level="section">
-                    Featured Systems & Software Projects
+                    Featured AI & Software Projects
                 </SectionHeading>
                 <motion.p
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                    className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${
-                        currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
-                    }`}
+                    className={`text-sm sm:text-base max-w-2xl mx-auto mt-3 font-sans ${currentTheme === 'minimal' ? 'text-gray-600' : 'text-slate-300'
+                        }`}
                 >
                     Engineering architectures, machine learning deployments, and full-stack software systems developed alongside academic studies.
                 </motion.p>
@@ -55,15 +54,14 @@ export default function Projects() {
                         />
                     ))
                 ) : (
-                    <div className={`col-span-full text-center ${
-                        currentTheme === 'minimal' ? 'text-gray-900' : 'text-white'
-                    }`}>
+                    <div className={`col-span-full text-center ${currentTheme === 'minimal' ? 'text-gray-900' : 'text-white'
+                        }`}>
                         <p>No projects found. Total projects: {PROJECTS.length}</p>
                     </div>
                 )}
             </motion.div>
             {visibleCount < PROJECTS.length && (
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
@@ -73,11 +71,10 @@ export default function Projects() {
                         onClick={() => setVisibleCount((c) => c + INITIAL_VISIBLE)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`group relative flex items-center gap-2 px-8 py-3 rounded-xl font-medium transition-all duration-300 border overflow-hidden ${
-                            currentTheme === 'minimal'
+                        className={`group relative flex items-center gap-2 px-8 py-3 rounded-xl font-medium transition-all duration-300 border overflow-hidden ${currentTheme === 'minimal'
                                 ? 'bg-white border-gray-300 text-gray-700 hover:border-gray-400 hover:shadow-lg shadow-gray-200/50'
                                 : 'bg-neutral-800/50 border-neutral-600 text-purple-300 hover:bg-purple-800/20 hover:border-purple-500 hover:shadow-lg shadow-purple-900/20'
-                        }`}
+                            }`}
                     >
                         <span className="relative z-10">Load More Projects</span>
                         <motion.span
@@ -87,9 +84,8 @@ export default function Projects() {
                         >
                             ↓
                         </motion.span>
-                        <span className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${
-                            currentTheme === 'minimal' ? 'bg-gray-900' : 'bg-purple-500'
-                        }`} />
+                        <span className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${currentTheme === 'minimal' ? 'bg-gray-900' : 'bg-purple-500'
+                            }`} />
                     </motion.button>
                 </motion.div>
             )}
