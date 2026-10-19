@@ -20,7 +20,7 @@ export default function Projects() {
     const visibleProjects = PROJECTS.slice(0, visibleCount);
 
     return (
-        <section className="max-w-7xl mx-auto py-12 px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto py-12 md:py-16 px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
                 <SectionHeading level="section">
                     Featured AI & Software Projects
@@ -96,6 +96,6 @@ export default function Projects() {
                     setIsProjectModalOpen(false);
                 }}
             />
-        </section>
+        </div>
     );
 }

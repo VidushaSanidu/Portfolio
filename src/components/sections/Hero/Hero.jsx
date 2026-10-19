@@ -36,7 +36,7 @@ export default function Hero() {
     const typedRole = useTypingAnimation(HERO_CONTENT.roles, 120, 80, 2200);
 
     return (
-        <section className="relative py-14 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="relative pt-20 pb-12 md:pt-24 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
             {/* Subtle academic background ambiance - light parchment & cool slate tone */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[360px] rounded-full blur-3xl bg-blue-100/40" />

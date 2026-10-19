@@ -53,52 +53,48 @@ function AppContent() {
 
       <Navbar />
 
-      <main id="main-content" className="container mx-auto px-4 md:px-8 pb-32 md:pb-24" tabIndex="-1">
+      <main id="main-content" className="container mx-auto px-4 md:px-8 pb-20 md:pb-28" tabIndex="-1">
         <ErrorBoundary sectionName="hero section">
-          <section id="hero">
+          <section id="hero" className="scroll-mt-20">
             <Hero />
           </section>
         </ErrorBoundary>
 
-        <div className="space-y-16 md:space-y-24">
-          <ErrorBoundary sectionName="education section">
-            <section id="education">
-              <Education />
-            </section>
-          </ErrorBoundary>
+        <ErrorBoundary sectionName="education section">
+          <section id="education" className="scroll-mt-20">
+            <Education />
+          </section>
+        </ErrorBoundary>
 
-          <ErrorBoundary sectionName="research section">
-            <section id="research">
-              <Research />
-            </section>
-          </ErrorBoundary>
+        <ErrorBoundary sectionName="research section">
+          <section id="research" className="scroll-mt-20">
+            <Research />
+          </section>
+        </ErrorBoundary>
 
-          <ErrorBoundary sectionName="timeline section">
-            <section id="timeline">
-              <Timeline />
-            </section>
-          </ErrorBoundary>
+        <ErrorBoundary sectionName="timeline section">
+          <section id="timeline" className="scroll-mt-20 py-8 md:py-12">
+            <Timeline />
+          </section>
+        </ErrorBoundary>
 
+        <ErrorBoundary sectionName="skills section">
+          <section id="skills" className="scroll-mt-20">
+            <SkillsVisualization />
+          </section>
+        </ErrorBoundary>
 
-          <ErrorBoundary sectionName="skills section">
-            <section id="skills">
-              <SkillsVisualization />
-            </section>
-          </ErrorBoundary>
+        <ErrorBoundary sectionName="projects section">
+          <section id="projects" className="scroll-mt-20">
+            <Projects />
+          </section>
+        </ErrorBoundary>
 
-          <ErrorBoundary sectionName="projects section">
-            <section id="projects">
-              <Projects />
-            </section>
-          </ErrorBoundary>
-
-
-          <ErrorBoundary sectionName="contact section">
-            <section id="contact">
-              <Contact />
-            </section>
-          </ErrorBoundary>
-        </div>
+        <ErrorBoundary sectionName="contact section">
+          <section id="contact" className="scroll-mt-20">
+            <Contact />
+          </section>
+        </ErrorBoundary>
       </main>
     </div>
   );

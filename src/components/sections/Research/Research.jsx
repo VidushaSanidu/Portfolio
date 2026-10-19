@@ -28,7 +28,7 @@ export default function Research() {
   const [expandedAbstract, setExpandedAbstract] = useState(null);
 
   return (
-    <section id="research" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <div className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
@@ -267,6 +267,6 @@ export default function Research() {
           </div>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 }

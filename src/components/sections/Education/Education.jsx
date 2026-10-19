@@ -13,7 +13,7 @@ export default function Education() {
   const isMinimal = currentTheme === 'minimal';
 
   return (
-    <section id="education" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative">
+    <div className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto relative">
       {/* Anchor for experience link */}
       <div id="experience" className="absolute -top-24" />
 
@@ -228,6 +228,6 @@ export default function Education() {
         </motion.div>
 
       </div>
-    </section>
+    </div>
   );
 }

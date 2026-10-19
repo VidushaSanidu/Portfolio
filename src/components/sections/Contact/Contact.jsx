@@ -34,13 +34,12 @@ export default function Contact() {
     const theme = useTheme();
 
     return (
-        <section className="py-16 md:py-14 px-4 md:px-8">
-            <div className="max-w-6xl mx-auto">
-                <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    variants={containerVariants}
-                >
+        <div className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+            >
                     {/* Header */}
                     <motion.div className="text-center" variants={itemVariants}>
                         <SectionHeading level="section">
@@ -329,7 +328,6 @@ export default function Contact() {
                         </div>
                     </motion.div>
                 </motion.div>
-            </div>
-        </section>
+        </div>
     );
 }
