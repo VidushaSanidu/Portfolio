@@ -7,7 +7,7 @@ const SECTION_LINKS = [
     { label: 'Home', href: '#hero' },
     { label: 'Background', href: '#education' },
     { label: 'Research', href: '#research' },
-    { label: 'Timeline', href: '#timeline' },
+    { label: 'Journey', href: '#timeline' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },

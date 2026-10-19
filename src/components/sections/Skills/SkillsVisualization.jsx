@@ -65,24 +65,21 @@ export default function SkillsVisualization() {
               </div>
 
               {/* Skills List */}
-              <div className="space-y-2.5">
-                {data.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 transition-colors hover:bg-slate-100/70"
-                  >
-                    <div className="flex items-center gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {data.skills.map((skill) => {
+                  const skillName = typeof skill === 'string' ? skill : skill.name;
+                  return (
+                    <div
+                      key={skillName}
+                      className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 transition-colors hover:bg-slate-100/70"
+                    >
                       <CheckCircle2 className="w-3.5 h-3.5 text-blue-900 flex-shrink-0" />
                       <span className="text-xs sm:text-sm font-medium text-slate-800">
-                        {skill.name}
+                        {skillName}
                       </span>
                     </div>
-
-                    <span className="text-[11px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
-                      {skill.years}y exp
-                    </span>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           );

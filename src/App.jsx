@@ -35,7 +35,7 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden antialiased transition-colors duration-500 text-slate-800 bg-[#f8fafc]">
+    <div className="overflow-x-clip antialiased transition-colors duration-500 text-slate-800 bg-[#f8fafc]">
       {/* Scroll Progress Bar */}
       <ScrollProgressBar />
 

@@ -20,52 +20,54 @@ export const ACADEMIC_AFFILIATION = {
 export const RESEARCH_PILLARS = [
   {
     id: "fl",
-    title: "Federated Learning (FL)",
-    subtitle: "Decentralized Model Training & Optimization",
+    title: "Federated Learning (FL) & Aggregation Algorithms",
+    subtitle: "Decentralized Model Training & Optimization Dynamics",
     description:
-      "Investigating decentralized training paradigms that prevent centralized data collection while addressing statistical client heterogeneity.",
+      "Investigating decentralized training paradigms and mathematical aggregation schemes to optimize convergence under statistical client heterogeneity.",
     topics: [
       "Decentralized model training & collaborative aggregation protocols",
-      "Aggregation algorithms (FedAvg, FedProx, adaptive optimization)",
-      "Heterogeneous data distribution (Non-IID client partition mitigation)",
-      "Communication efficiency, gradient compression & sparse updates",
-      "Client drift mitigation and personalized federated models"
+      "Robust aggregation algorithms (FedAvg, FedProx, adaptive optimization)",
+      "Statistical client heterogeneity & Non-IID data partition mitigation",
+      "Communication-efficient training, gradient compression & sparse updates",
+      "Client drift compensation and convergence acceleration"
     ],
-    highlight: "Non-IID & Client Drift Mitigation",
+    highlight: "Aggregation Algorithms & Non-IID Optimization",
     color: "from-blue-500 to-cyan-500",
     glowColor: "rgba(6, 182, 212, 0.15)",
     badgeColor: "border-cyan-500/30 text-cyan-400 bg-cyan-500/10"
   },
   {
     id: "privacy",
-    title: "Privacy & Security in AI",
-    subtitle: "Differential Privacy & Collaborative Robustness",
+    title: "Privacy-Preserving & Personalized Federated Learning",
+    subtitle: "Differential Privacy, Secure Protocols & Local Model Adaptation",
     description:
-      "Engineering rigorous mathematical guarantees and cryptographic mechanisms for collaborative machine learning.",
+      "Engineering rigorous privacy guarantees and tailored client adaptation strategies to deliver private, client-specific predictive models.",
     topics: [
-      "Differential Privacy (DP) with calibrated noise mechanisms (Gaussian/Laplace)",
-      "Secure aggregation protocols against curious central servers",
-      "Adversarial robustness against data poisoning and model backdoor attacks",
-      "Privacy-preserving machine learning frameworks and membership-inference defense"
+      "Differential Privacy (DP) with calibrated Gaussian/Laplace noise mechanisms",
+      "Client model personalization (meta-learning, local adaptation, fine-tuning)",
+      "Secure aggregation protocols against semi-honest and malicious servers",
+      "Adversarial defense against membership inference and model poisoning",
+      "Balancing privacy-utility trade-offs in distributed collaborative learning"
     ],
-    highlight: "Differential Privacy & Secure Aggregation",
+    highlight: "Differential Privacy & Client Personalization",
     color: "from-purple-500 to-indigo-500",
     glowColor: "rgba(147, 51, 234, 0.15)",
     badgeColor: "border-purple-500/30 text-purple-400 bg-purple-500/10"
   },
   {
     id: "ml-dl",
-    title: "Machine Learning & Deep Learning",
-    subtitle: "Medical AI, Trajectory Modeling & Multi-Agent Systems",
+    title: "Machine Learning in Healthcare & Medical Decision Support",
+    subtitle: "Clinical Decision Support, Diagnostic Systems & Healthcare AI",
     description:
-      "Designing specialized deep architectures for complex real-world dynamics, spatial-temporal modeling, and medical data.",
+      "Designing specialized predictive architectures and clinical decision support models tailored for high-stakes healthcare environments.",
     topics: [
-      "Machine learning in the medical field & clinical decision support datasets",
-      "Multi-Agent systems & cooperative decision-making frameworks",
-      "Spatial-temporal modeling for trajectory and dynamic flow prediction",
-      "Representation learning, optimization dynamics, and general machine learning"
+      "Clinical decision support systems (CDSS) & diagnostic predictive modeling",
+      "Electronic Health Records (EHR) & multi-modal medical data analysis",
+      "Cross-silo privacy-preserving collaborative learning across medical centers",
+      "Model explainability, interpretability, and clinical risk stratification",
+      "Fairness, validation, and generalization in healthcare machine learning"
     ],
-    highlight: "Medical Informatics & Multi-Agent ML",
+    highlight: "Clinical Informatics & Diagnostic Support",
     color: "from-pink-500 to-rose-500",
     glowColor: "rgba(244, 63, 94, 0.15)",
     badgeColor: "border-pink-500/30 text-pink-400 bg-pink-500/10"
@@ -73,16 +75,16 @@ export const RESEARCH_PILLARS = [
   {
     id: "edge",
     title: "Distributed Computing & Edge Intelligence",
-    subtitle: "Resource-Constrained Model Deployment & Orchestration",
+    subtitle: "Resource-Constrained Model Deployment & Edge Orchestration",
     description:
-      "Bridging machine learning algorithms with systems-level edge-device execution, memory constraints, and asynchronous networks.",
+      "Bridging algorithmic machine learning with systems-level edge-device execution, memory constraints, and asynchronous networks.",
     topics: [
-      "Resource-constrained model deployment & quantization",
-      "On-device training and asynchronous edge updates",
+      "Resource-constrained model deployment, quantization & pruning",
+      "On-device local training and asynchronous edge-cloud communication",
       "Edge-cloud orchestration, network latency mitigation, and fault tolerance",
-      "High-throughput decentralized communication pipelines"
+      "Scalable decentralized message passing and distributed pipelines"
     ],
-    highlight: "On-Device Training & Edge-Cloud Orchestration",
+    highlight: "On-Device Inference & Edge-Cloud Orchestration",
     color: "from-emerald-500 to-teal-500",
     glowColor: "rgba(16, 185, 129, 0.15)",
     badgeColor: "border-emerald-500/30 text-emerald-400 bg-emerald-500/10"

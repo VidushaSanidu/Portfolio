@@ -1,15 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../../../contexts/ThemeContext';
 import SectionHeading from '../../ui/common/SectionHeading';
 import {
-  ACADEMIC_AFFILIATION,
   RESEARCH_PILLARS,
-  PUBLICATIONS,
-  RESEARCH_STATS
+  PUBLICATIONS
 } from '../../../constants/research';
 import {
-  GraduationCap,
   BookOpen,
   ShieldCheck,
   Brain,
@@ -17,7 +13,6 @@ import {
   Network,
   ChevronDown,
   Mail,
-  MapPin,
   CheckCircle2,
   Layers,
   Copy,
@@ -34,13 +29,10 @@ const iconMap = {
 };
 
 export default function Research() {
-  const { currentTheme } = useTheme();
   const [selectedPillar, setSelectedPillar] = useState(null);
   const [expandedAbstract, setExpandedAbstract] = useState("pedestrian-trajectory-fl-2026");
   const [bibtexOpen, setBibtexOpen] = useState(null);
   const [copiedBibtex, setCopiedBibtex] = useState(null);
-
-  const isMinimal = currentTheme === 'minimal';
 
   const copyToClipboard = (id, text) => {
     navigator.clipboard.writeText(text);
@@ -51,14 +43,14 @@ export default function Research() {
   };
 
   return (
-    <section id="research" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+    <section id="research" className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-16"
+        className="text-center mb-10"
       >
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase mb-3 bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs">
           <BookOpen className="w-3.5 h-3.5 text-blue-900" />
@@ -69,80 +61,14 @@ export default function Research() {
           Research Thrusts & Publications
         </SectionHeading>
 
-        <p className="text-base sm:text-lg max-w-3xl mx-auto mt-4 leading-relaxed font-sans text-slate-600">
+        <p className="text-base sm:text-lg max-w-3xl mx-auto mt-3 leading-relaxed font-sans text-slate-600">
           Investigating the frontiers of decentralized machine learning, provable privacy guarantees, and edge systems with applications in spatial-temporal dynamics and clinical informatics.
         </p>
       </motion.div>
 
-      {/* Institutional Affiliation & Academic Focus Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="relative rounded-2xl p-6 sm:p-8 md:p-9 mb-16 border transition-all duration-300 bg-white border-slate-200 shadow-sm"
-      >
-        <div className="grid lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-8 space-y-4">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-medium bg-blue-50 text-blue-900 border border-blue-200">
-                <GraduationCap className="w-3.5 h-3.5" />
-                {ACADEMIC_AFFILIATION.status}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono text-slate-600 bg-slate-50 border border-slate-200">
-                <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                {ACADEMIC_AFFILIATION.location}
-              </span>
-            </div>
-
-            <div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-                {ACADEMIC_AFFILIATION.degree}
-              </h3>
-              <p className="text-base sm:text-lg text-slate-600 mt-1 font-serif italic">
-                {ACADEMIC_AFFILIATION.department} • {ACADEMIC_AFFILIATION.institution}
-              </p>
-            </div>
-
-            <p className="text-sm sm:text-base leading-relaxed text-slate-700">
-              {ACADEMIC_AFFILIATION.focus}
-            </p>
-
-            {/* Notice for Academic Inquiries */}
-            <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
-              <ShieldCheck className="w-4 h-4 text-blue-900 flex-shrink-0 mt-0.5" />
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                <strong className="text-slate-900 font-semibold">Academic Inquiries: </strong>
-                {ACADEMIC_AFFILIATION.collaborationNotice}
-              </p>
-            </div>
-          </div>
-
-          {/* Academic Metrics Summary */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-3">
-            {RESEARCH_STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 rounded-xl border text-center bg-slate-50 border-slate-200 shadow-2xs"
-              >
-                <div className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
-                  {stat.value}
-                </div>
-                <div className="text-[11px] font-mono uppercase tracking-wider text-blue-900 mt-1 font-medium">
-                  {stat.label}
-                </div>
-                <div className="text-[11px] text-slate-500 mt-0.5 leading-tight">
-                  {stat.detail}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
       {/* Research Pillars / Themes */}
-      <div className="mb-20">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3 border-b border-slate-200 pb-4">
+      <div className="mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2 border-b border-slate-200 pb-3">
           <div>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2.5">
               <Layers className="w-6 h-6 text-blue-900" />
@@ -152,12 +78,10 @@ export default function Research() {
               Methodological foundations, theoretical challenges, and distributed architectures.
             </p>
           </div>
-          <span className="text-xs font-mono text-slate-500">
-            Click to inspect specific investigations
-          </span>
+
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {RESEARCH_PILLARS.map((pillar, index) => {
             const Icon = iconMap[pillar.id] || Brain;
             const isSelected = selectedPillar === pillar.id;
@@ -223,7 +147,7 @@ export default function Research() {
 
       {/* Selected Publications & Manuscripts */}
       <div>
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3 border-b border-slate-200 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2 border-b border-slate-200 pb-3">
           <div>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 flex items-center gap-2.5">
               <FileText className="w-6 h-6 text-blue-900" />
@@ -238,7 +162,7 @@ export default function Research() {
           </span>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {PUBLICATIONS.map((pub, index) => {
             const isAbstractExpanded = expandedAbstract === pub.id;
             const isBibtexVisible = bibtexOpen === pub.id;
@@ -421,7 +345,7 @@ export default function Research() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="mt-16 p-7 sm:p-9 rounded-2xl bg-slate-50 border border-slate-200 text-center relative shadow-xs"
+        className="mt-12 p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 text-center relative shadow-xs"
       >
         <div className="max-w-2xl mx-auto space-y-3">
           <h4 className="font-serif text-2xl font-bold text-slate-900">
@@ -442,7 +366,7 @@ export default function Research() {
               href="#timeline"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-medium text-xs font-mono border border-slate-300 transition-colors shadow-2xs"
             >
-              <span>View Academic Timeline</span>
+              <span>View Journey & Milestones</span>
             </a>
           </div>
         </div>
