@@ -92,14 +92,14 @@ export const TIMELINE_EVENTS = [
     id: "event-journal-trajectory-2026",
     step: "07",
     period: "Jun 2026",
-    title: "Journal Submission: Pedestrian Trajectory Prediction via Federated Learning",
+    title: "Journal Submission: Pedestrian Trajectory Prediction via Personalized FL",
     organization: "Ceylon Journal of Science (CJS)",
-    role: "Lead Author",
+    role: "Lead Author (with Prof. Saluka Kodithuwakku)",
     category: "research",
     typeBadge: "Journal Submission",
     summary:
-      "Submitted lead-author research manuscript establishing a decentralized, socially-aware spatial-temporal trajectory forecasting framework with privacy-preserving FL.",
-    tags: ["Federated Learning", "Trajectory Prediction", "Spatial-Temporal", "Privacy"],
+      "Submitted paper proposing a Personalized Federated Learning (pFL) framework with a lightweight Social Interaction-Aware Transformer (Light-SIAT) and GCN, achieving 0.32m ADE (~14% outperformance over FedAvg) on ETH/UCY benchmarks.",
+    tags: ["Personalized FL", "Light-SIAT", "Graph Neural Networks", "0.32m ADE", "CJS"],
     link: "#research"
   },
   {
@@ -107,12 +107,12 @@ export const TIMELINE_EVENTS = [
     step: "08",
     period: "Sep 2026",
     title: "Started Manuscript: Optimized Federated Edge AI for EV Speed Prediction",
-    organization: "Electric Vehicles & Edge AI Research",
-    role: "Principal Researcher",
+    organization: "Manuscript in Preparation",
+    role: "Lead Author (with Dr. Erunika Dayaratna)",
     category: "research",
     typeBadge: "Manuscript in Preparation",
     summary:
-      "Began research manuscript on an optimized federated edge AI framework combining computer vision image processing with distributed speed prediction for semi-automated EVs.",
+      "Started working on an optimized federated edge AI framework combining real-time computer vision image processing with on-device vehicle speed prediction for semi-automated electric vehicles.",
     tags: ["Federated Edge AI", "Electric Vehicles", "Image Processing", "Speed Prediction"],
     link: "#research"
   }
