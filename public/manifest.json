@@ -1,0 +1,23 @@
+{
+  "short_name": "Vidusha Sanidu",
+  "name": "Vidusha Sanidu | Academic & Research Portfolio",
+  "description": "Academic research portfolio of Vidusha Sanidu, Computer Science Scholar at University of Peradeniya (UOP). Specializing in Federated Learning (FL), Differential Privacy, and Distributed Edge Intelligence.",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#f8fafc",
+  "theme_color": "#f8fafc",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "en-US"
+}

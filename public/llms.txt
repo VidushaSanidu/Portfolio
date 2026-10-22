@@ -1,0 +1,42 @@
+# Vidusha Sanidu - Academic & Research Portfolio
+
+> Vidusha Sanidu is a Computer Science Researcher and AI Engineer specializing in Federated Learning (FL), Privacy-Preserving Machine Learning, Differential Privacy, Distributed Edge Intelligence, and Healthcare Decision Support. He is affiliated with the University of Peradeniya (UOP), Sri Lanka.
+
+## Academic & Institutional Affiliation
+- **Institution**: University of Peradeniya (UOP), Sri Lanka
+- **Department**: Department of Statistics & Computer Science, Faculty of Science
+- **Degree**: B.Sc. (Hons) in Computer Science (2021 – 2025), Second Class (Upper Division), GPA: 3.67 / 4.00
+- **Current Role**: Research Assistant @ University Research Council (URC), UOP
+- **Status**: Open to academic research collaborations, preprints, and graduate opportunities (M.Sc. / Ph.D.)
+
+## Research Pillars
+1. **Distributed Artificial Intelligence**: Decentralized optimization methods, multi-agent coordination, and aggregation algorithms under client heterogeneity.
+2. **Privacy-Preserving & Personalized Federated Learning**: Rigorous privacy guarantees via Differential Privacy (DP), secure aggregation, and client-specific personalization.
+3. **Machine Learning in Healthcare & Medical Decision Support**: Ensemble learning and predictive modeling for clinical datasets, including hemodialysis management and diagnostic workflows.
+4. **Distributed Computing & Edge Intelligence**: Optimizing on-device computation, memory constraints, and asynchronous communication across resource-constrained edge devices.
+
+## Key Publications & Preprints
+- **Journal Submission (2026)**: *Socially-Aware Pedestrian Trajectory Prediction System Using Federated Learning*
+  - **Authors**: Vidusha Sanidu, Prof. Saluka Kodithuwakku
+  - **Venue**: Ceylon Journal of Science
+  - **Contribution**: Introduced the Lightweight Social Interaction-Aware Transformer (Light-SIAT) integrating a Transformer encoder and Graph Convolutional Network (GCN). Achieved 0.32m ADE on ETH/UCY benchmarks (~14% improvement over FedAvg) under non-IID conditions with strict privacy guarantees.
+- **Research Manuscript in Preparation (2026)**: *Optimized Federated Edge AI Framework with Image Processing for Speed Prediction in Semi-Automated Electric Vehicles*
+  - **Authors**: Vidusha Sanidu, Dr. Erunika Dayaratna
+  - **Focus**: Real-time edge speed prediction and computer vision processing under decentralized privacy constraints for semi-automated electric vehicles.
+
+## Select Engineering Projects
+- **EchoIC**: AI-powered voice cloning and analysis platform with asynchronous queue processing and Cloudflare R2 storage. (https://echo-ic.com)
+- **AI Assistant & Study Planner**: RAG-powered student advisor built for TPT School (Florida, USA) using Google Gemini and FastAPI. (https://chatbot.tngs.es)
+- **Road Tax Me**: UK vehicle road tax management platform integrated with DVLA API and Stripe. (https://www.roadtaxme.co.uk)
+- **StudentMoves**: UK student accommodation portal with advanced property management and Stripe billing. (https://www.studentmoves.co.uk)
+- **IT-Center UOP**: Student management and lab reservation system for University of Peradeniya IT Center. (https://www.ceit.pdn.ac.lk)
+
+## Official Profiles & Links
+- **Website**: https://vidushasanidu.github.io
+- **ORCID**: https://orcid.org/0009-0003-6807-4815
+- **Google Scholar**: https://scholar.google.com
+- **GitHub**: https://github.com/VidushaSanidu
+- **LinkedIn**: https://www.linkedin.com/in/vidushasanidu
+- **Kaggle**: https://kaggle.com/vidushasanidu
+- **Email**: vidushsanidu07@gmail.com
+- **Detailed LLM Context**: https://vidushasanidu.github.io/llms-full.txt

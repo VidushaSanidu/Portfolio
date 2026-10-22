@@ -1,0 +1,74 @@
+# Vidusha Sanidu - Complete Academic, Research & Engineering Dossier
+
+## 1. Identity & Biographical Profile
+- **Full Name**: Vidusha Sanidu
+- **Professional Title**: Computer Science Researcher & AI Engineer
+- **Current Position**: Research Assistant @ University Research Council (URC), University of Peradeniya (UOP)
+- **Location**: Colombo / Peradeniya, Sri Lanka
+- **Contact Email**: vidushsanidu07@gmail.com
+- **Phone**: +94 76 041 6256
+- **Portfolio Website**: https://vidushasanidu.github.io/
+- **Google Scholar**: https://scholar.google.com
+- **ORCID ID**: https://orcid.org/0009-0003-6807-4815
+- **GitHub**: https://github.com/VidushaSanidu
+- **LinkedIn**: https://www.linkedin.com/in/vidushasanidu
+- **Kaggle**: https://kaggle.com/vidushasanidu
+- **Medium**: https://medium.com/@vidushsanidu07
+
+## 2. Research Focus & Specializations
+Vidusha Sanidu's research sits at the intersection of:
+- **Federated Learning (FL)**: Decentralized machine learning architectures capable of training models across distributed edge nodes without centralizing raw data.
+- **Privacy-Preserving Machine Learning (PPML)**: Differential Privacy (DP), secure aggregation, encrypted gradients, and client drift mitigation under non-IID (Independent and Identically Distributed) data regimes.
+- **Personalized Federated Learning (pFL)**: Decoupled model heads and feature extractors to balance generalized global knowledge representation with localized client adaptation.
+- **Edge Intelligence & Resource-Constrained ML**: Model quantization, lightweight transformer encoders, and Graph Convolutional Networks (GCNs) tailored for low-compute physical hardware.
+- **Healthcare & Clinical AI**: Machine learning applied to longitudinal clinical datasets, predictive hemodialysis management, and hospital resource distribution systems.
+
+## 3. Detailed Publications & Manuscripts
+
+### Publication 1: Socially-Aware Pedestrian Trajectory Prediction System Using Federated Learning
+- **Status**: Submitted & Under Review at Ceylon Journal of Science (2026)
+- **Authors**: Vidusha Sanidu, Prof. Saluka Kodithuwakku
+- **Key Architecture**: Lightweight Social Interaction-Aware Transformer (Light-SIAT)
+- **Technical Problem**: Pedestrian trajectory forecasting requires centralized massive surveillance video data, creating critical privacy violations and data-silo issues.
+- **Methodology & Novelty**:
+  - Employs a Transformer encoder to model individual temporal pattern dynamics.
+  - Couples with a Graph Convolutional Network (GCN) to capture complex multi-agent social interactions between pedestrians.
+  - Decouples global shared feature extractors from client-specific personalized prediction layers to address non-IID surveillance scenes.
+- **Quantitative Results**: Achieves an Average Displacement Error (ADE) of 0.32 meters on the ETH (ETH Zurich) and UCY (University of Cyprus) benchmarks, surpassing baseline Federated Averaging (FedAvg) by approximately 14% while preserving strict data privacy.
+
+### Publication 2: Optimized Federated Edge AI Framework with Image Processing for Speed Prediction in Semi-Automated Electric Vehicles
+- **Status**: Manuscript in Preparation (2026)
+- **Authors**: Vidusha Sanidu, Dr. Erunika Dayaratna
+- **Domain**: Edge AI, Electric Vehicles, Autonomous Driving, Computer Vision
+- **Methodology**: Decentralized edge image processing pipeline paired with asynchronous model updates to predict vehicle speed dynamically, minimizing client drift and bandwidth transfer across automotive edge units.
+
+## 4. Academic Background & Education
+- **University of Peradeniya (UOP)**:
+  - **Degree**: Bachelor of Science (Honours) in Computer Science (2021 – 2025)
+  - **Class Standing**: Second Class (Upper Division)
+  - **GPA**: 3.67 / 4.00
+  - **Faculty**: Faculty of Science
+  - **Department**: Department of Statistics & Computer Science
+  - **Coursework**: Abstract Algebra, Real Analysis, Probability Theory, Graph Theory, Data Structures & Algorithms, Artificial Intelligence, Distributed Computing, Parallel Computing, Advanced Networking, Statistical Inference.
+- **Ananda College, Colombo**:
+  - **Program**: G.C.E. Advanced Level (Physical Science Stream) (2011 – 2019)
+  - **Results**: Combined Mathematics, Physics, Chemistry (Results: AAC)
+
+## 5. Professional & Research Experience
+- **Research Assistant** (2026 – Present)
+  - *Organization*: University Research Council (URC), University of Peradeniya
+  - *Scope*: Multi-disciplinary AI project developing predictive decision-support and resource management tools for Sri Lankan healthcare systems.
+  - *Key Milestone*: Evaluated ensemble learning models for predictive hemodialysis outcomes on real-world longitudinal patient data from Teaching Hospital Peradeniya.
+- **AI & Automation Developer Intern** (Sep 2025 – Jan 2026)
+  - *Organization*: Taino Spain SL
+  - *Scope*: Engineered automated workflows using custom LLM agent systems, FastAPI microservices, modern React, PostgreSQL, and n8n pipelines.
+- **Full Stack & ML Developer** (2023 – 2026)
+  - *Scope*: Built production full-stack systems, computer vision models, and AI pipelines for international clients.
+
+## 6. Software & Production Systems
+- **EchoIC** (https://echo-ic.com): Voice cloning service leveraging XTTS, GPT models, Cloudflare R2, Stripe, and asynchronous task queues.
+- **TPT School AI Assistant** (https://chatbot.tngs.es): RAG application using Google Gemini models, LangChain, FastAPI, and Redis for student transcript evaluation and study planning.
+- **Road Tax Me** (https://www.roadtaxme.co.uk): UK vehicle road tax platform integrating DVLA APIs and Stripe.
+- **StudentMoves** (https://www.studentmoves.co.uk): Student accommodation platform built with Next.js and Django.
+- **IT-Center Web Application** (https://www.ceit.pdn.ac.lk): Management and reservation platform for the University of Peradeniya IT Center.
+- **Sri Lankan Vehicle Category Detection**: Low-latency computer vision classifier using YOLOv8, OpenCV, and Flask.
