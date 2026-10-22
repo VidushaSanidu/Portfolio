@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 
 const iconMap = {
+  dai: Network,
   fl: Network,
   privacy: ShieldCheck,
   'ml-dl': Brain,

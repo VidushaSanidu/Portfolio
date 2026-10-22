@@ -19,10 +19,10 @@ export const ACADEMIC_AFFILIATION = {
 
 export const RESEARCH_PILLARS = [
   {
-    id: "fl",
-    title: "Federated Learning (FL) & Aggregation Algorithms",
+    id: "dai",
+    title: "Distributed Artificial Intelligence",
     description:
-      "Designing robust decentralized optimization methods and aggregation algorithms that enable multiple participants to train shared models collaboratively without exposing raw data.",
+      "Designing robust decentralized optimization methods, multi-agent coordination, and aggregation algorithms that enable distributed systems to learn and solve complex problems collaboratively.",
     color: "from-blue-500 to-cyan-500",
     glowColor: "rgba(6, 182, 212, 0.15)",
     badgeColor: "border-cyan-500/30 text-cyan-400 bg-cyan-500/10"
@@ -124,7 +124,7 @@ export const PUBLICATIONS = [
 ];
 
 export const RESEARCH_STATS = [
-  { label: "Research Pillars", value: "4", detail: "FL, Privacy, Medical ML, Edge AI" },
+  { label: "Research Pillars", value: "4", detail: "DAI, Privacy, Medical ML, Edge AI" },
   { label: "Manuscripts / Submissions", value: "2", detail: "Active EV manuscript & journal submission" },
   { label: "Academic Affiliation", value: "UOP", detail: "University of Peradeniya" },
   { label: "Primary Paradigm", value: "Decentralized", detail: "Privacy-Preserving Federated ML" }

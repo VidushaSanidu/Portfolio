@@ -12,7 +12,7 @@ export const HERO_CONTENT = {
   ],
   summary: `Research Assistant and Computer Science graduate at the University of Peradeniya, Sri Lanka. My primary research interests lie at the intersection of Federated Learning, privacy-preserving machine learning, and distributed optimization. I focus on developing decentralized architectures that perform reliably under client heterogeneity and computational constraints.`,
   highlights: [
-    "Federated Learning (FL) & Aggregation Algorithms",
+    "Distributed Artificial Intelligence",
     "Privacy-Preserving & Personalized Federated Learning",
     "Machine Learning in Healthcare & Medical Decision Support",
     "Distributed Computing & Edge Intelligence",
