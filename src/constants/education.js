@@ -25,6 +25,24 @@ export const EDUCATION = [
       "Advanced Networking",
     ],
   },
+  {
+    id: "ananda-college-al",
+    institution: "Ananda College",
+    shortInstitution: "Ananda College",
+    degree: "G.C.E. Advanced Level",
+    faculty: "Physical Science Stream",
+    department: "Colombo 10, Sri Lanka",
+    location: "Colombo 10, Sri Lanka",
+    period: "2011 – 2019",
+    status: "G.C.E. A/L",
+    gpa: "Results: AAC",
+    courseworkLabel: "Key Subjects",
+    coursework: [
+      "Combined Mathematics",
+      "Physics",
+      "Chemistry",
+    ],
+  },
 ];
 
 export const EXPERIENCES = [
