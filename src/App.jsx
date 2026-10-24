@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ui/common/ErrorBoundary";
 import useKeyboardShortcuts from "./hooks/useKeyboardShortcuts";
 import { createSkipLink } from "./utils/accessibility";
 import { ToastProvider } from "./components/ui/common/Toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const Navbar = lazy(() => import("./components/layout/Navbar"));
 const Hero = lazy(() => import("./components/sections/Hero/Hero"));
@@ -118,6 +119,7 @@ function App() {
           >
             <AppContent />
           </Suspense>
+          <Analytics />
         </ToastProvider>
       </UIProvider>
     </ThemeProvider>
