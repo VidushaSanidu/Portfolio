@@ -1,6 +1,28 @@
 import { projectImages } from "./assets";
 
 export const PROJECTS = [
+  {
+    title: "Perturb AI | Decentralized Adversarial Robustness Network",
+    image: projectImages.perturbai,
+    images: [projectImages.perturbai],
+    description: {
+      summary: "Decentralized adversarial robustness network for production AI built on Bittensor, featuring an interactive live attack playground and admin dashboard.",
+      detailed: "A public web application for a decentralized adversarial robustness network designed for production AI models, built on the Bittensor ecosystem. As the full-stack developer, built the core web platform, an interactive playground showcasing live adversarial attack previews on AI models, and comprehensive administrative and network management functions.",
+      features: [
+        "Full-stack web application development for decentralized AI adversarial robustness",
+        "Interactive playground featuring live adversarial attack previews and testing",
+        "Built administrative functions and dashboard for monitoring and management",
+        "Integrated with Bittensor network architecture for decentralized verification",
+        "Engineered responsive, intuitive UI/UX for AI developers and enterprise users"
+      ]
+    },
+    url: "https://perturbai.io",
+    technologies: {
+      main: ["Bittensor", "Next.js", "React", "TypeScript", "Python"],
+      additional: ["Tailwind CSS", "Adversarial AI", "WebSockets", "Docker", "REST APIs"],
+      others: ["Subnet Architecture", "CI/CD", "Adversarial Testing"]
+    }
+  },
    {
     title: "EchoIC - AI Voice cloning & Analyze Service",
     image: projectImages.echoIc,

@@ -20,6 +20,7 @@ import echoIc from "../assets/projects/echoIc.png";
 import echoIc2 from "../assets/projects/echoIc2.png";
 
 import logging from "../assets/projects/logging.png";
+import perturbai from "../assets/projects/perturbai.png";
 
 export const projectImages = {
   bisdos,
@@ -36,5 +37,6 @@ export const projectImages = {
   vehicletax2,
   logging,
   echoIc,
-  echoIc2
+  echoIc2,
+  perturbai
 };
